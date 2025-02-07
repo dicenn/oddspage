@@ -26,13 +26,18 @@ function initWebSocketServer(server: HTTPServer) {
   wsServer.on("connection", (ws: WebSocket) => {
     console.log("New WebSocket connection established")
 
-    ws.on("message", async (message: string) => {
+    ws.on("message", async (message: string | Buffer) => {
       try {
-        const config: StreamConfig = JSON.parse(message)
+        const config: StreamConfig = JSON.parse(message.toString())
         console.log("Received stream config:", config)
 
         const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds`
         const params = new URLSearchParams()
+        
+        if (!API_KEY) {
+          throw new Error("API key is required")
+        }
+        
         params.append("key", API_KEY)
         params.append("sportsbook", "Pinnacle")
         params.append("market", config.market)

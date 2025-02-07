@@ -15,7 +15,18 @@ const firebaseConfig = {
   databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL
 }
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
+if (!firebaseConfig.apiKey || !firebaseConfig.databaseURL) {
+  throw new Error("Firebase configuration is missing required fields. Check your .env.local file.")
+}
+
+let app
+try {
+  app = getApps().length ? getApp() : initializeApp(firebaseConfig)
+} catch (error) {
+  console.error("Error initializing Firebase:", error)
+  throw error
+}
+
 const auth = getAuth(app)
 const db = getFirestore(app)
 const realTimeDb = getDatabase(app)

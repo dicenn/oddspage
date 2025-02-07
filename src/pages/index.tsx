@@ -95,65 +95,58 @@ export default function Home() {
                 <Skeleton className="h-8 w-full" />
               </div>
             ) : (
-              <>
-                <div className="relative">
-                  <ScrollArea className="w-full whitespace-nowrap rounded-md border">
-                    <div className="flex gap-4 p-4 bg-background sticky top-0 z-10">
-                      {columns.map(column => (
-                        <div key={column} className="min-w-[200px]">
-                          <Input
-                            placeholder={`Filter ${column}...`}
-                            onChange={e => setFilters(prev => ({
-                              ...prev,
-                              [column]: e.target.value
-                            }))}
-                            className="w-full"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    <ScrollBar orientation="horizontal" />
-                  </ScrollArea>
-                </div>
-
-                <div className="relative rounded-md border">
-                  <ScrollArea className="h-[600px] rounded-md">
-                    <div className="min-w-max">
-                      <Table>
-                        <TableHeader>
+              <div className="relative rounded-md border">
+                <ScrollArea className="h-[600px] rounded-md">
+                  <div className="min-w-max">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          {columns.map(column => (
+                            <TableHead key={column} className="min-w-[200px]">
+                              {column}
+                            </TableHead>
+                          ))}
+                        </TableRow>
+                        <TableRow>
+                          {columns.map(column => (
+                            <TableHead key={`filter-${column}`} className="min-w-[200px] py-2">
+                              <Input
+                                placeholder={`Filter ${column}...`}
+                                onChange={e => setFilters(prev => ({
+                                  ...prev,
+                                  [column]: e.target.value
+                                }))}
+                                className="w-full"
+                                size={32}
+                              />
+                            </TableHead>
+                          ))}
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {filteredData.length === 0 ? (
                           <TableRow>
-                            {columns.map(column => (
-                              <TableHead key={column} className="min-w-[200px]">
-                                {column}
-                              </TableHead>
-                            ))}
+                            <TableCell colSpan={columns.length} className="text-center">
+                              No data found
+                            </TableCell>
                           </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                          {filteredData.length === 0 ? (
-                            <TableRow>
-                              <TableCell colSpan={columns.length} className="text-center">
-                                No data found
-                              </TableCell>
+                        ) : (
+                          filteredData.map((row, index) => (
+                            <TableRow key={index}>
+                              {columns.map(column => (
+                                <TableCell key={column} className="min-w-[200px]">
+                                  {row[column]}
+                                </TableCell>
+                              ))}
                             </TableRow>
-                          ) : (
-                            filteredData.map((row, index) => (
-                              <TableRow key={index}>
-                                {columns.map(column => (
-                                  <TableCell key={column} className="min-w-[200px]">
-                                    {row[column]}
-                                  </TableCell>
-                                ))}
-                              </TableRow>
-                            ))
-                          )}
-                        </TableBody>
-                      </Table>
-                    </div>
-                    <ScrollBar orientation="horizontal" />
-                  </ScrollArea>
-                </div>
-              </>
+                          ))
+                        )}
+                      </TableBody>
+                    </Table>
+                  </div>
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
+              </div>
             )}
           </div>
         </Card>

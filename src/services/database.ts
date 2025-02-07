@@ -1,38 +1,56 @@
 
-import { ref, onValue, set, push, remove, Database } from "firebase/database"
+import { ref, onValue, set, push, remove } from "firebase/database"
 import { realTimeDb } from "@/lib/firebase"
 
 export interface BetData {
-  [key: string]: string | number
+  "Away Team": string
+  "Current Price": number
+  "Grade": string
+  "Home Team": string
+  "League": string
+  "Market": string
+  "Match Date": string
+  "Min Price": number
+  "Orginator Price": string | number
+  "Selection": string
+  "Selection Date": string
+  "Sport": string
+  id?: string
 }
-
-const BETS_REF = "bets";
 
 export const databaseService = {
   subscribeToBets: (callback: (data: BetData[]) => void) => {
-    const betsRef = ref(realTimeDb, BETS_REF)
+    const betsRef = ref(realTimeDb, "/")
     return onValue(betsRef, (snapshot) => {
       const data = snapshot.val()
-      const betsArray = data ? Object.entries(data).map(([id, bet]) => ({
-        id,
-        ...bet as BetData
-      })) : []
+      if (!data) {
+        callback([])
+        return
+      }
+
+      const betsArray = Object.entries(data).map(([id, bet]) => ({
+        ...(bet as BetData),
+        id
+      }))
+
       callback(betsArray)
+    }, (error) => {
+      console.error("Error fetching data:", error)
     })
   },
 
-  addBet: async (bet: BetData) => {
-    const betsRef = ref(realTimeDb, BETS_REF)
+  addBet: async (bet: Omit<BetData, "id">) => {
+    const betsRef = ref(realTimeDb, "/")
     return push(betsRef, bet)
   },
 
-  updateBet: async (id: string, bet: BetData) => {
-    const betRef = ref(realTimeDb, `${BETS_REF}/${id}`)
+  updateBet: async (id: string, bet: Omit<BetData, "id">) => {
+    const betRef = ref(realTimeDb, `/${id}`)
     return set(betRef, bet)
   },
 
   deleteBet: async (id: string) => {
-    const betRef = ref(realTimeDb, `${BETS_REF}/${id}`)
+    const betRef = ref(realTimeDb, `/${id}`)
     return remove(betRef)
   }
 }

@@ -37,13 +37,6 @@ export default function Home() {
     return values
   }, [data, columns])
 
-  const calculateColumnWidth = (column: string) => {
-    const headerLength = column.length
-    const values = Array.from(uniqueValues[column] || [])
-    const maxValueLength = Math.max(...values.map(v => String(v).length), headerLength)
-    return Math.min(Math.max(maxValueLength * 8, 100), 400)
-  }
-
   useEffect(() => {
     try {
       setLoading(true)
@@ -70,6 +63,13 @@ export default function Home() {
 
   useEffect(() => {
     if (data.length > 0 && columns.length > 0) {
+      const calculateColumnWidth = (column: string) => {
+        const headerLength = column.length
+        const values = Array.from(uniqueValues[column] || [])
+        const maxValueLength = Math.max(...values.map(v => String(v).length), headerLength)
+        return Math.min(Math.max(maxValueLength * 8, 100), 400)
+      }
+
       const widths = columns.reduce((acc, column) => {
         acc[column] = calculateColumnWidth(column)
         return acc

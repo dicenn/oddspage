@@ -15,6 +15,7 @@ export interface BetData {
   "Selection": string
   "Selection Date": string
   "Sport": string
+  "Game ID"?: string
   sport?: string
   market?: string
   selection?: string
@@ -40,10 +41,10 @@ export const databaseService = {
         return {
           ...betData,
           id,
-          sport: betData["Sport"]?.toLowerCase(),
-          market: betData["Market"],
-          selection: betData["Selection"],
-          game_id: betData["Game ID"]
+          sport: String(betData["Sport"] || "").toLowerCase(),
+          market: String(betData["Market"] || ""),
+          selection: String(betData["Selection"] || ""),
+          game_id: String(betData["Game ID"] || "")
         }
       })
 

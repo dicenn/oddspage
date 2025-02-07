@@ -15,7 +15,7 @@ export interface BetData {
   "Selection": string
   "Selection Date": string
   "Sport": string
-  "Game ID"?: string
+  "Game ID": string
   sport?: string
   market?: string
   selection?: string
@@ -38,14 +38,20 @@ export const databaseService = {
 
       const betsArray = Object.entries(data).map(([id, bet]) => {
         const betData = bet as BetData;
-        return {
+        console.log("Raw bet data:", betData);
+        console.log("Game ID from data:", betData["Game ID"]);
+        
+        const transformedBet = {
           ...betData,
           id,
           sport: String(betData["Sport"] || "").toLowerCase(),
           market: String(betData["Market"] || ""),
           selection: String(betData["Selection"] || ""),
           game_id: String(betData["Game ID"] || "")
-        }
+        };
+        
+        console.log("Transformed bet:", transformedBet);
+        return transformedBet;
       })
 
       callback(betsArray)

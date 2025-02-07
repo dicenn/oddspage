@@ -42,7 +42,16 @@ export class OddsStreamService {
         market: config.market,
       });
 
-      this.eventSource = new EventSource(`${url}?${params.toString()}`);
+      const fullUrl = `${url}?${params.toString()}`;
+      console.log("Connecting to stream:", fullUrl);
+      console.log("Stream config:", {
+        sport: config.sport,
+        gameId: config.gameId,
+        market: config.market,
+        selection: config.selection
+      });
+
+      this.eventSource = new EventSource(fullUrl);
       this.setupEventListeners();
     }
 
@@ -57,18 +66,33 @@ export class OddsStreamService {
   private setupEventListeners() {
     if (!this.eventSource) return;
 
+    this.eventSource.onopen = () => {
+      console.log("Stream connection opened");
+    };
+
     this.eventSource.addEventListener("odds", (event: MessageEvent) => {
+      console.log("Received odds event:", event.data);
       try {
         const oddsData: OddsData = JSON.parse(event.data);
+        console.log("Parsed odds data:", oddsData);
         
         oddsData.data.forEach((odd) => {
+          console.log("Processing odd:", odd);
           this.activeStreams.forEach((config, streamKey) => {
+            console.log("Checking against config:", {
+              streamKey,
+              gameId: config.gameId,
+              market: config.market,
+              selection: config.selection
+            });
+
             if (
               odd.game_id === config.gameId &&
               odd.market === config.market &&
               odd.selection === config.selection &&
               odd.sportsbook === "Pinnacle"
             ) {
+              console.log("Match found! Updating price:", odd.price);
               config.onOddsUpdate(odd.price);
             }
           });
@@ -76,6 +100,14 @@ export class OddsStreamService {
       } catch (error) {
         console.error("Error parsing odds data:", error);
       }
+    });
+
+    this.eventSource.addEventListener("connected", (event) => {
+      console.log("Stream connected event:", event);
+    });
+
+    this.eventSource.addEventListener("ping", (event) => {
+      console.log("Stream ping event:", event);
     });
 
     this.eventSource.onerror = (error: Event) => {
@@ -87,12 +119,14 @@ export class OddsStreamService {
 
   private cleanup() {
     if (this.eventSource) {
+      console.log("Cleaning up stream connection");
       this.eventSource.close();
       this.eventSource = null;
     }
   }
 
   private reconnect() {
+    console.log("Attempting to reconnect...");
     setTimeout(() => {
       const streams = Array.from(this.activeStreams.values());
       this.activeStreams.clear();

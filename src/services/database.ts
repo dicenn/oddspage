@@ -6,7 +6,7 @@ export interface BetData {
   [key: string]: string | number
 }
 
-const BETS_REF = "bets"
+const BETS_REF = ""
 
 export const databaseService = {
   subscribeToBets: (callback: (data: BetData[]) => void) => {

@@ -1,21 +1,3 @@
-
-interface OddsMessage {
-  type: string
-  price?: number
-  gameId?: string
-  market?: string
-  selection?: string
-  message?: string
-}
-
-interface StreamConfig {
-  sport: string
-  gameId: string
-  market: string
-  selection: string
-  onOddsUpdate: (price: number) => void
-}
-
 export class OddsStreamService {
   private ws: WebSocket | null = null
   private activeStreams: Map<string, StreamConfig> = new Map()
@@ -28,73 +10,81 @@ export class OddsStreamService {
 
   private async initWebSocket() {
     if (this.ws?.readyState === WebSocket.OPEN) return
-
+    
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:"
     const wsUrl = `${protocol}//${window.location.host}/api/ws-odds`
+    console.log("[WS Client] Connecting to:", wsUrl)
     
     return new Promise<void>((resolve, reject) => {
       try {
         this.ws = new WebSocket(wsUrl)
-
+        
         this.ws.onopen = () => {
-          console.log("WebSocket connection established")
+          console.log("[WS Client] Connection established")
           this.reconnectAttempts = 0
           this.sendActiveConfigs()
           resolve()
         }
 
         this.ws.onmessage = (event) => {
+          console.log("[WS Client] Received message:", event.data)
           try {
             const message: OddsMessage = JSON.parse(event.data)
+            console.log("[WS Client] Parsed message:", message)
             
             if (message.type === "odds" && message.price && message.gameId && message.market && message.selection) {
               const streamKey = `${message.gameId}:${message.market}:${message.selection}`
               const config = this.activeStreams.get(streamKey)
               
               if (config) {
+                console.log("[WS Client] Updating odds for:", streamKey)
                 config.onOddsUpdate(message.price)
               }
             } else if (message.type === "error") {
-              console.error("Stream error:", message.message)
+              console.error("[WS Client] Stream error:", message.message)
               this.reconnect()
             }
           } catch (error) {
-            console.error("Error processing message:", error)
+            console.error("[WS Client] Error processing message:", error)
           }
         }
 
         this.ws.onerror = (error) => {
-          console.error("WebSocket error:", error)
+          console.error("[WS Client] WebSocket error:", error)
           reject(error)
         }
 
         this.ws.onclose = () => {
-          console.log("WebSocket connection closed")
+          console.log("[WS Client] Connection closed")
           this.reconnect()
         }
       } catch (error) {
-        console.error("Error initializing WebSocket:", error)
+        console.error("[WS Client] Error initializing WebSocket:", error)
         reject(error)
       }
     })
   }
 
   private sendActiveConfigs() {
-    if (!this.ws || this.ws.readyState !== WebSocket.OPEN) return
+    if (!this.ws || this.ws.readyState !== WebSocket.OPEN) {
+      console.log("[WS Client] Cannot send configs - connection not open")
+      return
+    }
     
     this.activeStreams.forEach(config => {
+      console.log("[WS Client] Sending config:", config)
       this.ws?.send(JSON.stringify(config))
     })
   }
 
   private async reconnect() {
     if (this.reconnectAttempts >= this.maxReconnectAttempts) {
-      console.error("Max reconnection attempts reached")
+      console.error("[WS Client] Max reconnection attempts reached")
       return
     }
-
+    
     this.reconnectAttempts++
-    console.log(`Reconnecting... Attempt ${this.reconnectAttempts}/${this.maxReconnectAttempts}`)
+    console.log(`[WS Client] Reconnecting... Attempt ${this.reconnectAttempts}/${this.maxReconnectAttempts}`)
     
     await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, this.reconnectAttempts)))
     await this.initWebSocket()
@@ -104,12 +94,13 @@ export class OddsStreamService {
     if (typeof window === "undefined") return () => {}
     
     const streamKey = this.createStreamKey(config)
+    console.log("[WS Client] Subscribing to odds:", streamKey)
     this.activeStreams.set(streamKey, config)
-
+    
     void this.initWebSocket()
-    this.ws?.send(JSON.stringify(config))
-
+    
     return () => {
+      console.log("[WS Client] Unsubscribing from odds:", streamKey)
       this.activeStreams.delete(streamKey)
       if (this.activeStreams.size === 0) {
         this.ws?.close()
@@ -118,5 +109,3 @@ export class OddsStreamService {
     }
   }
 }
-
-export const oddsStreamService = new OddsStreamService()

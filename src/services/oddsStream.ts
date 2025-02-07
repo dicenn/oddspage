@@ -17,9 +17,6 @@ interface StreamConfig {
   onOddsUpdate: (price: number) => void;
 }
 
-const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY;
-const BASE_URL = "https://api.opticodds.com/api/v3/stream";
-
 export class OddsStreamService {
   private eventSource: EventSource | null = null;
   private activeStreams: Map<string, StreamConfig> = new Map();
@@ -35,15 +32,14 @@ export class OddsStreamService {
     this.activeStreams.set(streamKey, config);
 
     if (!this.eventSource) {
-      const url = `${BASE_URL}/${config.sport}/odds`;
       const params = new URLSearchParams({
-        key: API_KEY || "",
-        sportsbook: "Pinnacle",
+        sport: config.sport,
         market: config.market,
+        sportsbook: "Pinnacle"
       });
 
-      const fullUrl = `${url}?${params.toString()}`;
-      console.log("Connecting to stream:", fullUrl);
+      const fullUrl = `/api/odds-stream?${params.toString()}`;
+      console.log("Connecting to proxy stream:", fullUrl);
       console.log("Stream config:", {
         sport: config.sport,
         gameId: config.gameId,

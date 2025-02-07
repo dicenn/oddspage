@@ -1,9 +1,16 @@
 
-let EventSource: any;
+import type { EventSourceInit } from "eventsource";
+
+type EventSourceType = {
+  new(url: string, eventSourceInitDict?: EventSourceInit): EventSource;
+  prototype: EventSource;
+};
+
+let EventSourcePolyfill: EventSourceType | null = null;
 
 if (typeof window !== "undefined") {
   import("eventsource").then((module) => {
-    EventSource = module.default;
+    EventSourcePolyfill = module.default as EventSourceType;
   });
 }
 
@@ -29,7 +36,7 @@ const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY;
 const BASE_URL = "https://api.opticodds.com/api/v3/stream";
 
 export class OddsStreamService {
-  private eventSource: typeof EventSource | null = null;
+  private eventSource: EventSource | null = null;
   private activeStreams: Map<string, StreamConfig> = new Map();
 
   private createStreamKey(config: StreamConfig): string {
@@ -42,7 +49,7 @@ export class OddsStreamService {
     const streamKey = this.createStreamKey(config);
     this.activeStreams.set(streamKey, config);
 
-    if (!this.eventSource && EventSource) {
+    if (!this.eventSource && EventSourcePolyfill) {
       const url = `${BASE_URL}/${config.sport}/odds`;
       const params = new URLSearchParams({
         key: API_KEY || "",
@@ -50,7 +57,7 @@ export class OddsStreamService {
         market: config.market,
       });
 
-      this.eventSource = new EventSource(`${url}?${params.toString()}`);
+      this.eventSource = new EventSourcePolyfill(`${url}?${params.toString()}`);
       this.setupEventListeners();
     }
 
@@ -65,7 +72,7 @@ export class OddsStreamService {
   private setupEventListeners() {
     if (!this.eventSource) return;
 
-    this.eventSource.addEventListener("odds", (event: any) => {
+    this.eventSource.addEventListener("odds", (event: MessageEvent) => {
       try {
         const oddsData: OddsData = JSON.parse(event.data);
         
@@ -86,7 +93,7 @@ export class OddsStreamService {
       }
     });
 
-    this.eventSource.onerror = (error: any) => {
+    this.eventSource.onerror = (error: Event) => {
       console.error("EventSource failed:", error);
       this.cleanup();
       this.reconnect();

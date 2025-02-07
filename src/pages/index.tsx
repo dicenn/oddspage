@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { useState, useEffect } from "react"
 
 export default function Home() {
@@ -96,55 +96,61 @@ export default function Home() {
               </div>
             ) : (
               <>
-                <ScrollArea className="w-full whitespace-nowrap pb-4">
-                  <div className="flex gap-4">
-                    {columns.map(column => (
-                      <div key={column} className="min-w-[200px]">
-                        <Input
-                          placeholder={`Filter ${column}...`}
-                          onChange={e => setFilters(prev => ({
-                            ...prev,
-                            [column]: e.target.value
-                          }))}
-                          className="w-full"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
+                <div className="relative">
+                  <ScrollArea className="w-full whitespace-nowrap rounded-md border">
+                    <div className="flex gap-4 p-4 bg-background sticky top-0 z-10">
+                      {columns.map(column => (
+                        <div key={column} className="min-w-[200px]">
+                          <Input
+                            placeholder={`Filter ${column}...`}
+                            onChange={e => setFilters(prev => ({
+                              ...prev,
+                              [column]: e.target.value
+                            }))}
+                            className="w-full"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <ScrollBar orientation="horizontal" />
+                  </ScrollArea>
+                </div>
 
-                <div className="rounded-md border">
-                  <ScrollArea className="h-[600px]">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          {columns.map(column => (
-                            <TableHead key={column} className="min-w-[150px]">
-                              {column}
-                            </TableHead>
-                          ))}
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {filteredData.length === 0 ? (
+                <div className="relative rounded-md border">
+                  <ScrollArea className="h-[600px] rounded-md">
+                    <div className="min-w-max">
+                      <Table>
+                        <TableHeader>
                           <TableRow>
-                            <TableCell colSpan={columns.length} className="text-center">
-                              No data found
-                            </TableCell>
+                            {columns.map(column => (
+                              <TableHead key={column} className="min-w-[200px]">
+                                {column}
+                              </TableHead>
+                            ))}
                           </TableRow>
-                        ) : (
-                          filteredData.map((row, index) => (
-                            <TableRow key={index}>
-                              {columns.map(column => (
-                                <TableCell key={column} className="min-w-[150px]">
-                                  {row[column]}
-                                </TableCell>
-                              ))}
+                        </TableHeader>
+                        <TableBody>
+                          {filteredData.length === 0 ? (
+                            <TableRow>
+                              <TableCell colSpan={columns.length} className="text-center">
+                                No data found
+                              </TableCell>
                             </TableRow>
-                          ))
-                        )}
-                      </TableBody>
-                    </Table>
+                          ) : (
+                            filteredData.map((row, index) => (
+                              <TableRow key={index}>
+                                {columns.map(column => (
+                                  <TableCell key={column} className="min-w-[200px]">
+                                    {row[column]}
+                                  </TableCell>
+                                ))}
+                              </TableRow>
+                            ))
+                          )}
+                        </TableBody>
+                      </Table>
+                    </div>
+                    <ScrollBar orientation="horizontal" />
                   </ScrollArea>
                 </div>
               </>

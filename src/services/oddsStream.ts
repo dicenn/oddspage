@@ -35,7 +35,8 @@ export class OddsStreamService {
       const params = new URLSearchParams({
         sport: config.sport,
         market: config.market,
-        sportsbook: "Pinnacle"
+        sportsbook: "Pinnacle",
+        fixture_id: config.gameId
       });
 
       const fullUrl = `/api/odds-stream?${params.toString()}`;
@@ -44,7 +45,8 @@ export class OddsStreamService {
         sport: config.sport,
         gameId: config.gameId,
         market: config.market,
-        selection: config.selection
+        selection: config.selection,
+        fixture_id: config.gameId
       });
 
       this.eventSource = new EventSource(fullUrl);

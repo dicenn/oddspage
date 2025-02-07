@@ -1,19 +1,4 @@
 
-import type { EventSourceInit } from "eventsource";
-
-type EventSourceType = {
-  new(url: string, eventSourceInitDict?: EventSourceInit): EventSource;
-  prototype: EventSource;
-};
-
-let EventSourcePolyfill: EventSourceType | null = null;
-
-if (typeof window !== "undefined") {
-  import("eventsource").then((module) => {
-    EventSourcePolyfill = module.default as EventSourceType;
-  });
-}
-
 interface OddsData {
   data: Array<{
     game_id: string;
@@ -49,7 +34,7 @@ export class OddsStreamService {
     const streamKey = this.createStreamKey(config);
     this.activeStreams.set(streamKey, config);
 
-    if (!this.eventSource && EventSourcePolyfill) {
+    if (!this.eventSource) {
       const url = `${BASE_URL}/${config.sport}/odds`;
       const params = new URLSearchParams({
         key: API_KEY || "",
@@ -57,7 +42,7 @@ export class OddsStreamService {
         market: config.market,
       });
 
-      this.eventSource = new EventSourcePolyfill(`${url}?${params.toString()}`);
+      this.eventSource = new EventSource(`${url}?${params.toString()}`);
       this.setupEventListeners();
     }
 

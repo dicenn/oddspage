@@ -18,45 +18,43 @@ interface StreamConfig {
 
 let wsServer: Server | null = null
 
+// /src/pages/api/ws-odds.ts
+
 function initWebSocketServer(server: HTTPServer) {
   if (wsServer) return wsServer
-
   wsServer = new Server({ server })
   
   wsServer.on("connection", (ws: WebSocket) => {
     console.log("New WebSocket connection established")
-
     ws.on("message", async (message: string | Buffer) => {
       try {
         const config: StreamConfig = JSON.parse(message.toString())
         console.log("Received stream config:", config)
-
-        const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds`
-        const params = new URLSearchParams()
         
-        if (!API_KEY) {
-          throw new Error("API key is required")
+        const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds?sportsbook=Pinnacle&fixture_id=${config.gameId}&market=${encodeURIComponent(config.market)}`
+        
+        const response = await fetch(url, {
+          headers: {
+            'X-Api-Key': API_KEY,
+            'Accept': 'text/event-stream'
+          }
+        })
+
+        if (!response.ok) {
+          console.error(`HTTP error! status: ${response.status}`)
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-        
-        params.append("key", API_KEY)
-        params.append("sportsbook", "Pinnacle")
-        params.append("market", config.market)
-        params.append("fixture_id", config.gameId)
 
-        const response = await fetch(`${url}?${params.toString()}`)
         const reader = response.body?.getReader()
-
-        if (!reader) {
-          throw new Error("Failed to get stream reader")
-        }
+        if (!reader) throw new Error("Failed to get stream reader")
 
         while (true) {
           const { done, value } = await reader.read()
           if (done) break
-
+          
           const text = new TextDecoder().decode(value)
           const lines = text.split("\n")
-
+          
           for (const line of lines) {
             if (line.startsWith("data:")) {
               try {
@@ -68,7 +66,6 @@ function initWebSocketServer(server: HTTPServer) {
                     odd.selection === config.selection &&
                     odd.sportsbook === "Pinnacle"
                   )
-
                   if (matchingOdd) {
                     ws.send(JSON.stringify({
                       type: "odds",
@@ -95,7 +92,6 @@ function initWebSocketServer(server: HTTPServer) {
       console.log("WebSocket connection closed")
     })
   })
-
   return wsServer
 }
 

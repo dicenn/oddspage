@@ -25,14 +25,17 @@ function initWebSocketServer(server: HTTPServer) {
   wsServer = new Server({ server })
   
   wsServer.on("connection", (ws: WebSocket) => {
-    console.log("New WebSocket connection established")
+    console.log("[WS Server] New connection established")
+    
     ws.on("message", async (message: string | Buffer) => {
       try {
         const config: StreamConfig = JSON.parse(message.toString())
-        console.log("Received stream config:", config)
+        console.log("[WS Server] Received config:", config)
         
         const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds?sportsbook=Pinnacle&fixture_id=${config.gameId}&market=${encodeURIComponent(config.market)}`
-        
+        console.log("[WS Server] Fetching URL:", url)
+        console.log("[WS Server] Using API Key:", API_KEY)
+
         const response = await fetch(url, {
           headers: {
             'X-Api-Key': API_KEY,
@@ -40,8 +43,10 @@ function initWebSocketServer(server: HTTPServer) {
           }
         })
 
+        console.log("[WS Server] Response status:", response.status)
         if (!response.ok) {
-          console.error(`HTTP error! status: ${response.status}`)
+          const text = await response.text()
+          console.error("[WS Server] Error response:", text)
           throw new Error(`HTTP error! status: ${response.status}`)
         }
 
@@ -50,15 +55,21 @@ function initWebSocketServer(server: HTTPServer) {
 
         while (true) {
           const { done, value } = await reader.read()
-          if (done) break
+          if (done) {
+            console.log("[WS Server] Stream complete")
+            break
+          }
           
           const text = new TextDecoder().decode(value)
+          console.log("[WS Server] Received chunk:", text)
           const lines = text.split("\n")
           
           for (const line of lines) {
             if (line.startsWith("data:")) {
               try {
                 const data = JSON.parse(line.slice(5))
+                console.log("[WS Server] Parsed data:", data)
+                
                 if (data.data) {
                   const matchingOdd = data.data.find((odd: any) => 
                     odd.game_id === config.gameId &&
@@ -67,6 +78,7 @@ function initWebSocketServer(server: HTTPServer) {
                     odd.sportsbook === "Pinnacle"
                   )
                   if (matchingOdd) {
+                    console.log("[WS Server] Found matching odd:", matchingOdd)
                     ws.send(JSON.stringify({
                       type: "odds",
                       price: matchingOdd.price,
@@ -77,19 +89,22 @@ function initWebSocketServer(server: HTTPServer) {
                   }
                 }
               } catch (e) {
-                console.error("Error parsing odds data:", e)
+                console.error("[WS Server] Error parsing odds data:", e)
               }
             }
           }
         }
       } catch (error) {
-        console.error("Stream error:", error)
-        ws.send(JSON.stringify({ type: "error", message: "Stream error occurred" }))
+        console.error("[WS Server] Stream error:", error)
+        ws.send(JSON.stringify({ 
+          type: "error", 
+          message: error instanceof Error ? error.message : "Stream error occurred" 
+        }))
       }
     })
 
     ws.on("close", () => {
-      console.log("WebSocket connection closed")
+      console.log("[WS Server] Connection closed")
     })
   })
   return wsServer

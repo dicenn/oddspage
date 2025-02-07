@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { databaseService, BetData } from "@/services/database"
+import { oddsStreamService } from "@/services/oddsStream"
 
 export default function Home() {
   const [data, setData] = useState<BetData[]>([])
@@ -28,6 +29,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null)
   const [columnWidths, setColumnWidths] = useState<Record<string, number>>({})
   const [openPopover, setOpenPopover] = useState<string | null>(null)
+  const [pinnacleOdds, setPinnacleOdds] = useState<Record<string, number>>({})
 
   const uniqueValues = useMemo(() => {
     const values: Record<string, Set<string>> = {}
@@ -45,7 +47,7 @@ export default function Home() {
       const unsubscribe = databaseService.subscribeToBets((betsData) => {
         if (betsData.length > 0) {
           const firstBet = betsData[0]
-          setColumns(Object.keys(firstBet).filter(key => key !== "id"))
+          setColumns([...Object.keys(firstBet).filter(key => key !== "id"), "Pinnacle"])
           setData(betsData)
         }
         setLoading(false)
@@ -60,6 +62,31 @@ export default function Home() {
       setLoading(false)
     }
   }, [])
+
+  useEffect(() => {
+    const subscriptions: Array<() => void> = [];
+
+    data.forEach((row) => {
+      const streamConfig = {
+        sport: row.sport?.toLowerCase() || "",
+        gameId: row.game_id || "",
+        market: row.market || "",
+        selection: row.selection || "",
+        onOddsUpdate: (price: number) => {
+          setPinnacleOdds(prev => ({
+            ...prev,
+            [`${row.game_id}:${row.market}:${row.selection}`]: price
+          }))
+        }
+      };
+
+      subscriptions.push(oddsStreamService.subscribeToOdds(streamConfig));
+    });
+
+    return () => {
+      subscriptions.forEach(unsubscribe => unsubscribe());
+    };
+  }, [data]);
 
   useEffect(() => {
     if (data.length > 0 && columns.length > 0) {
@@ -84,6 +111,11 @@ export default function Home() {
       return String(row[key]).toLowerCase().includes(value.toLowerCase())
     })
   })
+
+  const getPinnacleOdds = (row: BetData) => {
+    const key = `${row.game_id}:${row.market}:${row.selection}`;
+    return pinnacleOdds[key];
+  };
 
   return (
     <>
@@ -196,7 +228,9 @@ export default function Home() {
                                   key={column}
                                   style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                                 >
-                                  {String(row[column])}
+                                  {column === "Pinnacle" ? 
+                                    (getPinnacleOdds(row) || "Loading...") :
+                                    String(row[column])}
                                 </TableCell>
                               ))}
                             </TableRow>

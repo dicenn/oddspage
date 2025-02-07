@@ -18,9 +18,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Button } from "@/components/ui/button"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { databaseService, BetData } from "@/services/database"
 
 export default function Home() {
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] = useState<BetData[]>([])
   const [filters, setFilters] = useState<Record<string, string>>({})
   const [columns, setColumns] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
@@ -31,7 +32,7 @@ export default function Home() {
   const uniqueValues = useMemo(() => {
     const values: Record<string, Set<string>> = {}
     columns.forEach(column => {
-      values[column] = new Set(data.map(row => row[column]))
+      values[column] = new Set(data.map(row => String(row[column])))
     })
     return values
   }, [data, columns])
@@ -40,48 +41,31 @@ export default function Home() {
     const headerLength = column.length
     const values = Array.from(uniqueValues[column] || [])
     const maxValueLength = Math.max(...values.map(v => String(v).length), headerLength)
-    return Math.min(Math.max(maxValueLength * 8, 100), 400) // Min 100px, Max 400px
+    return Math.min(Math.max(maxValueLength * 8, 100), 400)
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true)
-        setError(null)
-        const response = await fetch("/live-bets-small-sample-feb6-2025-m6tvogeh.csv")
-        if (!response.ok) {
-          throw new Error("Failed to load data")
+    try {
+      setLoading(true)
+      setError(null)
+
+      const unsubscribe = databaseService.subscribeToBets((betsData) => {
+        if (betsData.length > 0) {
+          const firstBet = betsData[0]
+          setColumns(Object.keys(firstBet).filter(key => key !== "id"))
+          setData(betsData)
         }
-        const text = await response.text()
-        
-        const rows = text.split("\n").filter(row => row.trim())
-        const headers = rows[0].split(",").map(header => header.trim())
-        setColumns(headers)
-        
-        const parsedData = rows.slice(1).map(row => {
-          const values = row.split(",").map(value => value.trim())
-          return headers.reduce((obj, header, index) => {
-            obj[header] = values[index] || ""
-            return obj
-          }, {} as Record<string, string>)
-        })
-        
-        setData(parsedData)
-
-        const widths = headers.reduce((acc, column) => {
-          acc[column] = calculateColumnWidth(column)
-          return acc
-        }, {} as Record<string, number>)
-        setColumnWidths(widths)
-      } catch (error) {
-        setError("Failed to load data. Please try again later.")
-        console.error("Error loading CSV:", error)
-      } finally {
         setLoading(false)
-      }
-    }
+      })
 
-    fetchData()
+      return () => {
+        unsubscribe()
+      }
+    } catch (error) {
+      setError("Failed to load data. Please try again later.")
+      console.error("Error loading data:", error)
+      setLoading(false)
+    }
   }, [])
 
   useEffect(() => {
@@ -97,7 +81,7 @@ export default function Home() {
   const filteredData = data.filter(row => {
     return Object.entries(filters).every(([key, value]) => {
       if (!value) return true
-      return row[key]?.toLowerCase().includes(value.toLowerCase())
+      return String(row[key]).toLowerCase().includes(value.toLowerCase())
     })
   })
 
@@ -206,13 +190,13 @@ export default function Home() {
                           </TableRow>
                         ) : (
                           filteredData.map((row, index) => (
-                            <TableRow key={index}>
+                            <TableRow key={row.id || index}>
                               {columns.map(column => (
                                 <TableCell 
                                   key={column}
                                   style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                                 >
-                                  {row[column]}
+                                  {String(row[column])}
                                 </TableCell>
                               ))}
                             </TableRow>

@@ -30,6 +30,7 @@ export default function Home() {
   const [columnWidths, setColumnWidths] = useState<Record<string, number>>({})
   const [openPopover, setOpenPopover] = useState<string | null>(null)
   const [pinnacleOdds, setPinnacleOdds] = useState<Record<string, number>>({})
+  const [streamStatus, setStreamStatus] = useState<"connecting" | "connected" | "error">("connecting")
 
   const uniqueValues = useMemo(() => {
     const values: Record<string, Set<string>> = {}
@@ -64,29 +65,43 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const subscriptions: Array<() => void> = [];
+    const subscriptions: Array<() => void> = []
 
-    data.forEach((row) => {
-      const streamConfig = {
-        sport: row.sport?.toLowerCase() || "",
-        gameId: row.game_id || "",
-        market: row.market || "",
-        selection: row.selection || "",
-        onOddsUpdate: (price: number) => {
-          setPinnacleOdds(prev => ({
-            ...prev,
-            [`${row.game_id}:${row.market}:${row.selection}`]: price
-          }))
+    if (data.length > 0) {
+      data.forEach((row) => {
+        if (!row.sport || !row.game_id || !row.market || !row.selection) {
+          console.warn("Missing required fields for odds stream:", row)
+          return
         }
-      };
 
-      subscriptions.push(oddsStreamService.subscribeToOdds(streamConfig));
-    });
+        const streamConfig = {
+          sport: row.sport.toLowerCase(),
+          gameId: row.game_id,
+          market: row.market,
+          selection: row.selection,
+          onOddsUpdate: (price: number) => {
+            setPinnacleOdds(prev => ({
+              ...prev,
+              [`${row.game_id}:${row.market}:${row.selection}`]: price
+            }))
+            setStreamStatus("connected")
+          }
+        }
+
+        try {
+          const unsubscribe = oddsStreamService.subscribeToOdds(streamConfig)
+          subscriptions.push(unsubscribe)
+        } catch (error) {
+          console.error("Error subscribing to odds stream:", error)
+          setStreamStatus("error")
+        }
+      })
+    }
 
     return () => {
-      subscriptions.forEach(unsubscribe => unsubscribe());
-    };
-  }, [data]);
+      subscriptions.forEach(unsubscribe => unsubscribe())
+    }
+  }, [data])
 
   useEffect(() => {
     if (data.length > 0 && columns.length > 0) {
@@ -113,9 +128,10 @@ export default function Home() {
   })
 
   const getPinnacleOdds = (row: BetData) => {
-    const key = `${row.game_id}:${row.market}:${row.selection}`;
-    return pinnacleOdds[key];
-  };
+    const key = `${row.game_id}:${row.market}:${row.selection}`
+    const odds = pinnacleOdds[key]
+    return odds !== undefined ? odds : (streamStatus === "connecting" ? "Connecting..." : "Waiting for odds...")
+  }
 
   return (
     <>
@@ -138,6 +154,12 @@ export default function Home() {
             {error && (
               <Alert variant="destructive">
                 <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+
+            {streamStatus === "error" && (
+              <Alert variant="destructive">
+                <AlertDescription>Failed to connect to odds stream. Odds may be unavailable.</AlertDescription>
               </Alert>
             )}
 
@@ -229,7 +251,7 @@ export default function Home() {
                                   style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                                 >
                                   {column === "Pinnacle" ? 
-                                    (getPinnacleOdds(row) || "Loading...") :
+                                    getPinnacleOdds(row) :
                                     String(row[column])}
                                 </TableCell>
                               ))}

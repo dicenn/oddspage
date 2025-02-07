@@ -16,6 +16,7 @@ export interface BetData {
   "Selection Date": string
   "Sport": string
   id?: string
+  [key: string]: string | number | undefined
 }
 
 export const databaseService = {

@@ -21,22 +21,35 @@ export interface BetData {
 
 export const databaseService = {
   subscribeToBets: (callback: (data: BetData[]) => void) => {
+    console.log("Initializing database subscription...")
     const betsRef = ref(realTimeDb, "/")
+    
+    console.log("Database reference created:", betsRef)
+    
     return onValue(betsRef, (snapshot) => {
+      console.log("Received database snapshot")
       const data = snapshot.val()
+      console.log("Raw database data:", data)
+      
       if (!data) {
+        console.log("No data received from database")
         callback([])
         return
       }
 
-      const betsArray = Object.entries(data).map(([id, bet]) => ({
-        ...(bet as BetData),
-        id
-      }))
+      const betsArray = Object.entries(data).map(([id, bet]) => {
+        console.log(`Processing bet with ID: ${id}`, bet)
+        return {
+          ...(bet as BetData),
+          id
+        }
+      })
 
+      console.log("Processed bets array:", betsArray)
       callback(betsArray)
     }, (error) => {
-      console.error("Error fetching data:", error)
+      console.error("Error in database subscription:", error)
+      throw error
     })
   },
 

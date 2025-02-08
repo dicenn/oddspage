@@ -1,5 +1,5 @@
 
-import type { Server as WebSocketServer, WebSocket } from "ws"
+import { WebSocket, WebSocketServer } from "ws"
 import { NextApiRequest, NextApiResponse } from "next"
 import { Server as HTTPServer } from "http"
 import { Socket } from "net"
@@ -25,7 +25,7 @@ const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY || ""
 
 let wsServer: WebSocketServer | null = null
 
-function initWebSocketServer(server: HTTPServer) {
+function initWebSocketServer(server: HTTPServer): WebSocketServer {
   if (wsServer) return wsServer
   wsServer = new WebSocketServer({ server })
   

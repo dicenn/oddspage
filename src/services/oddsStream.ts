@@ -1,3 +1,21 @@
+
+interface StreamConfig {
+  sport: string
+  gameId: string
+  market: string
+  selection: string
+  onOddsUpdate: (price: number) => void
+}
+
+interface OddsMessage {
+  type: "odds" | "error"
+  price?: number
+  gameId?: string
+  market?: string
+  selection?: string
+  message?: string
+}
+
 export class OddsStreamService {
   private ws: WebSocket | null = null
   private activeStreams: Map<string, StreamConfig> = new Map()
@@ -109,3 +127,5 @@ export class OddsStreamService {
     }
   }
 }
+
+export const oddsStreamService = new OddsStreamService()

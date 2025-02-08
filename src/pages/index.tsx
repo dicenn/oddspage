@@ -16,14 +16,15 @@ import { useState, useEffect, useMemo } from "react"
 import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { databaseService, BetData } from "@/services/database"
 import { oddsStreamService } from "@/services/oddsStream"
+import { Badge } from "@/components/ui/badge"
 
 export default function Home() {
   const [data, setData] = useState<BetData[]>([])
-  const [filters, setFilters] = useState<Record<string, string>>({})
+  const [filters, setFilters] = useState<Record<string, string[]>>({})
   const [columns, setColumns] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -48,8 +49,17 @@ export default function Home() {
       const unsubscribe = databaseService.subscribeToBets((betsData) => {
         if (betsData.length > 0) {
           const firstBet = betsData[0]
-          setColumns([...Object.keys(firstBet).filter(key => key !== "id"), "Pinnacle"])
+          const newColumns = [...Object.keys(firstBet).filter(key => key !== "id"), "Pinnacle"]
+          setColumns(newColumns)
           setData(betsData)
+          // Initialize filters with empty arrays for each column
+          setFilters(prev => {
+            const newFilters: Record<string, string[]> = {}
+            newColumns.forEach(col => {
+              newFilters[col] = prev[col] || []
+            })
+            return newFilters
+          })
         }
         setLoading(false)
       })
@@ -121,9 +131,9 @@ export default function Home() {
   }, [data, columns, uniqueValues])
 
   const filteredData = data.filter(row => {
-    return Object.entries(filters).every(([key, value]) => {
-      if (!value) return true
-      return String(row[key]).toLowerCase().includes(value.toLowerCase())
+    return Object.entries(filters).every(([key, selectedValues]) => {
+      if (!selectedValues || selectedValues.length === 0) return true
+      return selectedValues.includes(String(row[key]))
     })
   })
 
@@ -131,6 +141,26 @@ export default function Home() {
     const key = `${row.game_id}:${row.market}:${row.selection}`
     const odds = pinnacleOdds[key]
     return odds !== undefined ? odds : (streamStatus === "connecting" ? "Connecting..." : "Waiting for odds...")
+  }
+
+  const toggleFilter = (column: string, value: string) => {
+    setFilters(prev => {
+      const currentValues = prev[column] || []
+      const newValues = currentValues.includes(value)
+        ? currentValues.filter(v => v !== value)
+        : [...currentValues, value]
+      return {
+        ...prev,
+        [column]: newValues
+      }
+    })
+  }
+
+  const clearColumnFilter = (column: string) => {
+    setFilters(prev => ({
+      ...prev,
+      [column]: []
+    }))
   }
 
   return (
@@ -191,46 +221,70 @@ export default function Home() {
                               key={`filter-${column}`} 
                               style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                             >
-                              <Popover open={openPopover === column} onOpenChange={(open) => setOpenPopover(open ? column : null)}>
-                                <PopoverTrigger asChild>
-                                  <Button
-                                    variant="outline"
-                                    role="combobox"
-                                    className="w-full justify-between"
-                                  >
-                                    {filters[column] || `Filter ${column}...`}
-                                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                  </Button>
-                                </PopoverTrigger>
-                                <PopoverContent className="w-full p-0" style={{ width: `${columnWidths[column]}px` }}>
-                                  <Command>
-                                    <CommandInput placeholder={`Search ${column}...`} />
-                                    <CommandEmpty>No value found.</CommandEmpty>
-                                    <CommandGroup>
-                                      {Array.from(uniqueValues[column] || []).map((value) => (
-                                        <CommandItem
-                                          key={value}
-                                          onSelect={() => {
-                                            setFilters(prev => ({
-                                              ...prev,
-                                              [column]: value
-                                            }))
-                                            setOpenPopover(null)
-                                          }}
+                              <div className="space-y-2">
+                                <Popover open={openPopover === column} onOpenChange={(open) => setOpenPopover(open ? column : null)}>
+                                  <PopoverTrigger asChild>
+                                    <Button
+                                      variant="outline"
+                                      role="combobox"
+                                      className="w-full justify-between"
+                                    >
+                                      {filters[column]?.length ? `${filters[column].length} selected` : `Filter ${column}...`}
+                                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                    </Button>
+                                  </PopoverTrigger>
+                                  <PopoverContent className="w-full p-0" style={{ width: `${columnWidths[column]}px` }}>
+                                    <Command>
+                                      <CommandInput placeholder={`Search ${column}...`} />
+                                      <CommandEmpty>No value found.</CommandEmpty>
+                                      <CommandGroup>
+                                        {Array.from(uniqueValues[column] || []).map((value) => (
+                                          <CommandItem
+                                            key={value}
+                                            onSelect={() => toggleFilter(column, value)}
+                                          >
+                                            <Check
+                                              className={cn(
+                                                "mr-2 h-4 w-4",
+                                                filters[column]?.includes(value) ? "opacity-100" : "opacity-0"
+                                              )}
+                                            />
+                                            {value}
+                                          </CommandItem>
+                                        ))}
+                                      </CommandGroup>
+                                    </Command>
+                                  </PopoverContent>
+                                </Popover>
+                                {filters[column]?.length > 0 && (
+                                  <div className="flex flex-wrap gap-1">
+                                    {filters[column].map(value => (
+                                      <Badge
+                                        key={value}
+                                        variant="secondary"
+                                        className="max-w-[150px] truncate"
+                                      >
+                                        {value}
+                                        <button
+                                          className="ml-1 ring-offset-background rounded-full outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                                          onClick={() => toggleFilter(column, value)}
                                         >
-                                          <Check
-                                            className={cn(
-                                              "mr-2 h-4 w-4",
-                                              filters[column] === value ? "opacity-100" : "opacity-0"
-                                            )}
-                                          />
-                                          {value}
-                                        </CommandItem>
-                                      ))}
-                                    </CommandGroup>
-                                  </Command>
-                                </PopoverContent>
-                              </Popover>
+                                          <X className="h-3 w-3" />
+                                          <span className="sr-only">Remove</span>
+                                        </button>
+                                      </Badge>
+                                    ))}
+                                    <Button
+                                      variant="ghost"
+                                      size="sm"
+                                      className="h-6 px-2 text-xs"
+                                      onClick={() => clearColumnFilter(column)}
+                                    >
+                                      Clear
+                                    </Button>
+                                  </div>
+                                )}
+                              </div>
                             </TableHead>
                           ))}
                         </TableRow>

@@ -44,6 +44,7 @@ export const databaseService = {
         const gameId = betData.game_id || betData["Game ID"] || ""
         console.log("Extracted game_id:", gameId)
         
+        // In databaseService.subscribeToBets
         const transformedBet = {
           ...betData,
           id,
@@ -52,6 +53,14 @@ export const databaseService = {
           selection: String(betData["Selection"] || ""),
           game_id: String(gameId)
         }
+
+        console.log("DEBUG VALUES:", {
+          originalMarket: betData["Market"],
+          originalSelection: betData["Selection"],
+          transformedMarket: transformedBet.market,
+          transformedSelection: transformedBet.selection,
+          rawBetData: betData
+        });
         
         console.log("Transformed bet:", transformedBet)
         return transformedBet

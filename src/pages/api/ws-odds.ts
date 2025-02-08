@@ -1,6 +1,6 @@
 
 import { Server, WebSocket } from "ws"
-import { NextApiRequest } from "next"
+import { NextApiRequest, NextApiResponse } from "next"
 import { Server as HTTPServer } from "http"
 import { Socket } from "net"
 
@@ -11,7 +11,7 @@ interface SocketWithIO extends Socket {
 }
 
 interface NextApiResponseWithSocket extends NextApiResponse {
-  socket: SocketWithIO
+  socket: SocketWithIO | null
 }
 
 interface StreamConfig {
@@ -115,10 +115,11 @@ function initWebSocketServer(server: HTTPServer) {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponseWithSocket) {
-  if (!res.socket?.server.ws) {
+  const socket = res.socket
+  if (socket && !socket.server.ws) {
     console.log("Initializing WebSocket server")
-    res.socket?.server.ws = initWebSocketServer(res.socket.server)
+    socket.server.ws = initWebSocketServer(socket.server)
   }
   
-  res.end()
+  res.status(200).end()
 }

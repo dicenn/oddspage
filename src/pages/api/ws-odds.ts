@@ -1,8 +1,9 @@
 
-import { WebSocket, WebSocketServer } from "ws"
+import type { WebSocket, WebSocketServer } from "ws"
 import { NextApiRequest, NextApiResponse } from "next"
 import { Server as HTTPServer } from "http"
 import { Socket } from "net"
+import * as WebSocketLib from "ws"
 
 interface SocketWithIO extends Socket {
   server: HTTPServer & {
@@ -27,7 +28,7 @@ let wsServer: WebSocketServer | null = null
 
 function initWebSocketServer(server: HTTPServer): WebSocketServer {
   if (wsServer) return wsServer
-  wsServer = new WebSocketServer({ server })
+  wsServer = new WebSocketLib.WebSocketServer({ server })
   
   wsServer.on("connection", (ws: WebSocket) => {
     console.log("[WS Server] New connection established")

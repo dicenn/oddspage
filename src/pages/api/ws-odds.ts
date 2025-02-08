@@ -1,6 +1,6 @@
 
 import { Server, WebSocket } from "ws"
-import { NextApiRequest } from "next"
+import { NextApiRequest, NextApiResponse } from "next"
 import { Server as HTTPServer } from "http"
 
 const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY
@@ -18,8 +18,6 @@ interface StreamConfig {
 
 let wsServer: Server | null = null
 
-// /src/pages/api/ws-odds.ts
-
 function initWebSocketServer(server: HTTPServer) {
   if (wsServer) return wsServer
   wsServer = new Server({ server })
@@ -34,14 +32,13 @@ function initWebSocketServer(server: HTTPServer) {
         
         const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds?sportsbook=Pinnacle&fixture_id=${config.gameId}&market=${encodeURIComponent(config.market)}`
         console.log("[WS Server] Fetching URL:", url)
-        console.log("[WS Server] Using API Key:", API_KEY)
 
-        const response = await fetch(url, {
-          headers: {
-            'X-Api-Key': API_KEY,
-            'Accept': 'text/event-stream'
-          }
-        })
+        const headers: HeadersInit = {
+          'X-Api-Key': API_KEY,
+          'Accept': 'text/event-stream'
+        }
+
+        const response = await fetch(url, { headers })
 
         console.log("[WS Server] Response status:", response.status)
         if (!response.ok) {
@@ -110,7 +107,7 @@ function initWebSocketServer(server: HTTPServer) {
   return wsServer
 }
 
-export default function handler(req: NextApiRequest, res: any) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!res.socket.server.ws) {
     console.log("Initializing WebSocket server")
     res.socket.server.ws = initWebSocketServer(res.socket.server)

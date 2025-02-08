@@ -13,7 +13,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { useState, useEffect, useMemo } from "react"
-import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem } from "@/components/ui/command"
+import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem, CommandSeparator } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
 import { Check, ChevronsUpDown, X } from "lucide-react"
@@ -52,7 +52,6 @@ export default function Home() {
           const newColumns = [...Object.keys(firstBet).filter(key => key !== "id"), "Pinnacle"]
           setColumns(newColumns)
           setData(betsData)
-          // Initialize filters with empty arrays for each column
           setFilters(prev => {
             const newFilters: Record<string, string[]> = {}
             newColumns.forEach(col => {
@@ -156,11 +155,31 @@ export default function Home() {
     })
   }
 
+  const toggleAllFilters = (column: string) => {
+    setFilters(prev => {
+      const currentValues = prev[column] || []
+      const allValues = Array.from(uniqueValues[column] || [])
+      const newValues = currentValues.length === allValues.length ? [] : allValues
+      return {
+        ...prev,
+        [column]: newValues
+      }
+    })
+  }
+
   const clearColumnFilter = (column: string) => {
     setFilters(prev => ({
       ...prev,
       [column]: []
     }))
+  }
+
+  const getFilterButtonText = (column: string) => {
+    const selectedCount = filters[column]?.length || 0
+    const totalCount = uniqueValues[column]?.size || 0
+    if (selectedCount === 0) return `Filter ${column}...`
+    if (selectedCount === totalCount) return "All selected"
+    return `${selectedCount} of ${totalCount} selected`
   }
 
   return (
@@ -222,34 +241,57 @@ export default function Home() {
                               style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                             >
                               <div className="space-y-2">
-                                <Popover open={openPopover === column} onOpenChange={(open) => setOpenPopover(open ? column : null)}>
+                                <Popover 
+                                  open={openPopover === column} 
+                                  onOpenChange={(open) => setOpenPopover(open ? column : null)}
+                                >
                                   <PopoverTrigger asChild>
                                     <Button
                                       variant="outline"
                                       role="combobox"
                                       className="w-full justify-between"
                                     >
-                                      {filters[column]?.length ? `${filters[column].length} selected` : `Filter ${column}...`}
+                                      {getFilterButtonText(column)}
                                       <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                                     </Button>
                                   </PopoverTrigger>
-                                  <PopoverContent className="w-full p-0" style={{ width: `${columnWidths[column]}px` }}>
+                                  <PopoverContent 
+                                    className="w-full p-0" 
+                                    style={{ width: `${columnWidths[column]}px` }}
+                                    align="start"
+                                  >
                                     <Command>
                                       <CommandInput placeholder={`Search ${column}...`} />
                                       <CommandEmpty>No value found.</CommandEmpty>
                                       <CommandGroup>
+                                        <CommandItem
+                                          onSelect={() => toggleAllFilters(column)}
+                                          className="justify-between"
+                                        >
+                                          <span>Select All</span>
+                                          <Check
+                                            className={cn(
+                                              "h-4 w-4",
+                                              filters[column]?.length === uniqueValues[column]?.size
+                                                ? "opacity-100"
+                                                : "opacity-0"
+                                            )}
+                                          />
+                                        </CommandItem>
+                                        <CommandSeparator />
                                         {Array.from(uniqueValues[column] || []).map((value) => (
                                           <CommandItem
                                             key={value}
                                             onSelect={() => toggleFilter(column, value)}
+                                            className="justify-between"
                                           >
+                                            <span>{value}</span>
                                             <Check
                                               className={cn(
-                                                "mr-2 h-4 w-4",
+                                                "h-4 w-4",
                                                 filters[column]?.includes(value) ? "opacity-100" : "opacity-0"
                                               )}
                                             />
-                                            {value}
                                           </CommandItem>
                                         ))}
                                       </CommandGroup>

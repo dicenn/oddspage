@@ -1,12 +1,12 @@
 
-import { Server, WebSocket } from "ws"
+import type { Server as WebSocketServer, WebSocket } from "ws"
 import { NextApiRequest, NextApiResponse } from "next"
 import { Server as HTTPServer } from "http"
 import { Socket } from "net"
 
 interface SocketWithIO extends Socket {
   server: HTTPServer & {
-    ws?: Server
+    ws?: WebSocketServer
   }
 }
 
@@ -23,11 +23,11 @@ interface StreamConfig {
 
 const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY || ""
 
-let wsServer: Server | null = null
+let wsServer: WebSocketServer | null = null
 
 function initWebSocketServer(server: HTTPServer) {
   if (wsServer) return wsServer
-  wsServer = new Server({ server })
+  wsServer = new WebSocketServer({ server })
   
   wsServer.on("connection", (ws: WebSocket) => {
     console.log("[WS Server] New connection established")

@@ -1,17 +1,11 @@
-
-import { NextApiRequest, NextApiResponse } from "next"
+import { Server, WebSocket } from "ws"
+import { NextApiRequest } from "next"
 import { Server as HTTPServer } from "http"
-import { Socket } from "net"
-import WebSocket from "ws"
 
-interface SocketWithIO extends Socket {
-  server: HTTPServer & {
-    ws?: WebSocket.Server
-  }
-}
+const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY
 
-interface NextApiResponseWithSocket extends NextApiResponse {
-  socket: SocketWithIO | null
+if (!API_KEY) {
+  throw new Error("OPTICODDS_API_KEY is required")
 }
 
 interface StreamConfig {
@@ -21,37 +15,45 @@ interface StreamConfig {
   selection: string
 }
 
-const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY || ""
+let wsServer: Server | null = null
 
-let wsServer: WebSocket.Server | null = null
-
-function initWebSocketServer(server: HTTPServer): WebSocket.Server {
+function initWebSocketServer(server: HTTPServer) {
   if (wsServer) return wsServer
-  wsServer = new WebSocket.Server({ server })
+  wsServer = new Server({ server })
   
   wsServer.on("connection", (ws: WebSocket) => {
     console.log("[WS Server] New connection established")
     
-    ws.on("message", async (message: WebSocket.RawData) => {
+    ws.on("message", async (message: string | Buffer) => {
       try {
         const config: StreamConfig = JSON.parse(message.toString())
-        console.log("[WS Server] Received config:", config)
+        console.log("[WS Server] Config received:", config)
         
-        const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds?sportsbook=Pinnacle&fixture_id=${config.gameId}&market=${encodeURIComponent(config.market)}`
-        console.log("[WS Server] Fetching URL:", url)
-
-        const headers = {
-          'X-Api-Key': API_KEY,
+        const url = `https://api.opticodds.com/api/v3/stream/${config.sport}/odds`
+        const params = new URLSearchParams({
+          sportsbook: "Pinnacle",
+          fixture_id: config.gameId,
+          market: config.market
+        })
+        
+        console.log("[WS Server] Request URL:", `${url}?${params.toString()}`)
+        console.log("[WS Server] Request headers:", {
+          'X-Api-Key': API_KEY?.slice(0, 5) + '...',
           'Accept': 'text/event-stream'
-        } as const
+        })
 
-        const response = await fetch(url, { headers })
+        const response = await fetch(`${url}?${params.toString()}`, {
+          headers: {
+            'X-Api-Key': API_KEY,
+            'Accept': 'text/event-stream'
+          }
+        })
 
         console.log("[WS Server] Response status:", response.status)
         if (!response.ok) {
           const text = await response.text()
           console.error("[WS Server] Error response:", text)
-          throw new Error(`HTTP error! status: ${response.status}`)
+          throw new Error(`HTTP ${response.status}: ${text}`)
         }
 
         const reader = response.body?.getReader()
@@ -72,8 +74,6 @@ function initWebSocketServer(server: HTTPServer): WebSocket.Server {
             if (line.startsWith("data:")) {
               try {
                 const data = JSON.parse(line.slice(5))
-                console.log("[WS Server] Parsed data:", data)
-                
                 if (data.data) {
                   const matchingOdd = data.data.find((odd: any) => 
                     odd.game_id === config.gameId &&
@@ -99,7 +99,7 @@ function initWebSocketServer(server: HTTPServer): WebSocket.Server {
           }
         }
       } catch (error) {
-        console.error("[WS Server] Stream error:", error)
+        console.error("[WS Server] Error:", error)
         ws.send(JSON.stringify({ 
           type: "error", 
           message: error instanceof Error ? error.message : "Stream error occurred" 
@@ -114,12 +114,10 @@ function initWebSocketServer(server: HTTPServer): WebSocket.Server {
   return wsServer
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponseWithSocket) {
-  const socket = res.socket
-  if (socket && !socket.server.ws) {
-    console.log("Initializing WebSocket server")
-    socket.server.ws = initWebSocketServer(socket.server)
+export default function handler(req: NextApiRequest, res: any) {
+  if (!res.socket.server.ws) {
+    console.log("[WS Server] Initializing WebSocket server")
+    res.socket.server.ws = initWebSocketServer(res.socket.server)
   }
-  
-  res.status(200).end()
+  res.end()
 }

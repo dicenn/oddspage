@@ -16,11 +16,10 @@ import { useState, useEffect, useMemo } from "react"
 import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem, CommandSeparator } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { Check, ChevronsUpDown, X } from "lucide-react"
+import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { databaseService, BetData } from "@/services/database"
 import { oddsStreamService } from "@/services/oddsStream"
-import { Badge } from "@/components/ui/badge"
 
 export default function Home() {
   const [data, setData] = useState<BetData[]>([])
@@ -167,19 +166,13 @@ export default function Home() {
     })
   }
 
-  const clearColumnFilter = (column: string) => {
-    setFilters(prev => ({
-      ...prev,
-      [column]: []
-    }))
-  }
-
   const getFilterButtonText = (column: string) => {
     const selectedCount = filters[column]?.length || 0
     const totalCount = uniqueValues[column]?.size || 0
-    if (selectedCount === 0) return `Filter ${column}...`
-    if (selectedCount === totalCount) return "All selected"
-    return `${selectedCount} of ${totalCount} selected`
+    
+    if (selectedCount === 0) return `Filter ${column}`
+    if (selectedCount === totalCount) return `${column}: All selected`
+    return `${column}: ${selectedCount} selected`
   }
 
   return (
@@ -240,93 +233,63 @@ export default function Home() {
                               key={`filter-${column}`} 
                               style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
                             >
-                              <div className="space-y-2">
-                                <Popover 
-                                  open={openPopover === column} 
-                                  onOpenChange={(open) => setOpenPopover(open ? column : null)}
-                                >
-                                  <PopoverTrigger asChild>
-                                    <Button
-                                      variant="outline"
-                                      role="combobox"
-                                      className="w-full justify-between"
-                                    >
-                                      {getFilterButtonText(column)}
-                                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                                    </Button>
-                                  </PopoverTrigger>
-                                  <PopoverContent 
-                                    className="w-full p-0" 
-                                    style={{ width: `${columnWidths[column]}px` }}
-                                    align="start"
+                              <Popover 
+                                open={openPopover === column} 
+                                onOpenChange={(open) => setOpenPopover(open ? column : null)}
+                              >
+                                <PopoverTrigger asChild>
+                                  <Button
+                                    variant="outline"
+                                    role="combobox"
+                                    className="w-full justify-between"
                                   >
-                                    <Command>
-                                      <CommandInput placeholder={`Search ${column}...`} />
-                                      <CommandEmpty>No value found.</CommandEmpty>
-                                      <CommandGroup>
+                                    {getFilterButtonText(column)}
+                                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                                  </Button>
+                                </PopoverTrigger>
+                                <PopoverContent 
+                                  className="w-full p-0" 
+                                  style={{ width: `${columnWidths[column]}px` }}
+                                  align="start"
+                                >
+                                  <Command>
+                                    <CommandInput placeholder={`Search ${column}...`} />
+                                    <CommandEmpty>No value found.</CommandEmpty>
+                                    <CommandGroup>
+                                      <CommandItem
+                                        onSelect={() => toggleAllFilters(column)}
+                                        className="justify-between"
+                                      >
+                                        <span>Select All</span>
+                                        <Check
+                                          className={cn(
+                                            "h-4 w-4",
+                                            filters[column]?.length === uniqueValues[column]?.size
+                                              ? "opacity-100"
+                                              : "opacity-0"
+                                          )}
+                                        />
+                                      </CommandItem>
+                                      <CommandSeparator />
+                                      {Array.from(uniqueValues[column] || []).map((value) => (
                                         <CommandItem
-                                          onSelect={() => toggleAllFilters(column)}
+                                          key={value}
+                                          onSelect={() => toggleFilter(column, value)}
                                           className="justify-between"
                                         >
-                                          <span>Select All</span>
+                                          <span>{value}</span>
                                           <Check
                                             className={cn(
                                               "h-4 w-4",
-                                              filters[column]?.length === uniqueValues[column]?.size
-                                                ? "opacity-100"
-                                                : "opacity-0"
+                                              filters[column]?.includes(value) ? "opacity-100" : "opacity-0"
                                             )}
                                           />
                                         </CommandItem>
-                                        <CommandSeparator />
-                                        {Array.from(uniqueValues[column] || []).map((value) => (
-                                          <CommandItem
-                                            key={value}
-                                            onSelect={() => toggleFilter(column, value)}
-                                            className="justify-between"
-                                          >
-                                            <span>{value}</span>
-                                            <Check
-                                              className={cn(
-                                                "h-4 w-4",
-                                                filters[column]?.includes(value) ? "opacity-100" : "opacity-0"
-                                              )}
-                                            />
-                                          </CommandItem>
-                                        ))}
-                                      </CommandGroup>
-                                    </Command>
-                                  </PopoverContent>
-                                </Popover>
-                                {filters[column]?.length > 0 && (
-                                  <div className="flex flex-wrap gap-1">
-                                    {filters[column].map(value => (
-                                      <Badge
-                                        key={value}
-                                        variant="secondary"
-                                        className="max-w-[150px] truncate"
-                                      >
-                                        {value}
-                                        <button
-                                          className="ml-1 ring-offset-background rounded-full outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                                          onClick={() => toggleFilter(column, value)}
-                                        >
-                                          <X className="h-3 w-3" />
-                                          <span className="sr-only">Remove</span>
-                                        </button>
-                                      </Badge>
-                                    ))}
-                                    <Button
-                                      variant="ghost"
-                                      size="sm"
-                                      className="h-6 px-2 text-xs"
-                                      onClick={() => clearColumnFilter(column)}
-                                    >
-                                      Clear
-                                    </Button>
-                                  </div>
-                                )}
-                              </div>
+                                      ))}
+                                    </CommandGroup>
+                                  </Command>
+                                </PopoverContent>
+                              </Popover>
                             </TableHead>
                           ))}
                         </TableRow>

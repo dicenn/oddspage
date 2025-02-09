@@ -4,11 +4,7 @@ import { NextApiRequest } from "next"
 import { Server as HTTPServer } from "http"
 import { Socket } from "socket.io"
 
-const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY
-
-if (!API_KEY) {
-  throw new Error("OPTICODDS_API_KEY is required")
-}
+const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY || ""
 
 interface StreamConfig {
   sport: string
@@ -60,13 +56,12 @@ function initSocketServer(server: HTTPServer) {
         
         console.log("[Socket.IO Server] Request URL:", `${url}?${params.toString()}`)
         console.log("[Socket.IO Server] Request headers:", {
-          "X-Api-Key": API_KEY?.slice(0, 5) + "...",
+          "X-Api-Key": API_KEY.slice(0, 5) + "...",
           "Accept": "text/event-stream"
         })
 
         const response = await fetch(`${url}?${params.toString()}`, { headers })
 
-        console.log("[Socket.IO Server] Response status:", response.status)
         if (!response.ok) {
           const text = await response.text()
           console.error("[Socket.IO Server] Error response:", text)
@@ -83,13 +78,9 @@ function initSocketServer(server: HTTPServer) {
 
         while (true) {
           const { done, value } = await reader.read()
-          if (done) {
-            console.log("[Socket.IO Server] Stream complete")
-            break
-          }
+          if (done) break
           
           const text = new TextDecoder().decode(value)
-          console.log("[Socket.IO Server] Received chunk:", text)
           const lines = text.split("\n")
           
           for (const line of lines) {
@@ -104,7 +95,6 @@ function initSocketServer(server: HTTPServer) {
                     odd.sportsbook === "Pinnacle"
                   )
                   if (matchingOdd) {
-                    console.log("[Socket.IO Server] Found matching odd:", matchingOdd)
                     socket.emit("odds", {
                       type: "odds",
                       price: matchingOdd.price,

@@ -18,6 +18,10 @@ interface OddsMessage {
   message?: string
 }
 
+interface ConnectError extends Error {
+  description?: string
+}
+
 export class OddsStreamService {
   private socket: Socket | null = null
   private activeStreams: Map<string, StreamConfig> = new Map()
@@ -68,8 +72,8 @@ export class OddsStreamService {
       console.log("[Socket.IO Client] Connection closed")
     })
 
-    this.socket.on("connect_error", (error) => {
-      console.error("[Socket.IO Client] Connection error:", error)
+    this.socket.on("connect_error", (error: ConnectError) => {
+      console.error("[Socket.IO Client] Connection error:", error.message)
       this.reconnectAttempts++
     })
   }

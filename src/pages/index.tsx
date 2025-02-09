@@ -12,7 +12,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, useCallback } from "react"
 import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem, CommandSeparator } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
@@ -134,28 +134,30 @@ export default function Home() {
     }
   }, [data, columns, uniqueValues])
 
-  const sortData = (data: BetData[]) => {
-    if (!sortConfig.column) return data
+  const sortData = useCallback((dataToSort: BetData[]) => {
+    if (!sortConfig.column) return dataToSort
 
-    return [...data].sort((a, b) => {
+    return [...dataToSort].sort((a, b) => {
+      if (!sortConfig.column) return 0
+
       const aValue = sortConfig.column === "Pinnacle" 
         ? pinnacleOdds[`${a.game_id}:${a.market}:${a.selection}`] || 0
-        : a[sortConfig.column]
+        : a[sortConfig.column as keyof BetData]
       const bValue = sortConfig.column === "Pinnacle"
         ? pinnacleOdds[`${b.game_id}:${b.market}:${b.selection}`] || 0
-        : b[sortConfig.column]
+        : b[sortConfig.column as keyof BetData]
 
       if (typeof aValue === "number" && typeof bValue === "number") {
         return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue
       }
 
-      const aStr = String(aValue).toLowerCase()
-      const bStr = String(bValue).toLowerCase()
+      const aStr = String(aValue || "").toLowerCase()
+      const bStr = String(bValue || "").toLowerCase()
       return sortConfig.direction === "asc" 
         ? aStr.localeCompare(bStr)
         : bStr.localeCompare(aStr)
     })
-  }
+  }, [sortConfig, pinnacleOdds])
 
   const handleSort = (column: string) => {
     setSortConfig(prev => ({
@@ -181,7 +183,7 @@ export default function Home() {
       })
     })
     return sortData(filtered)
-  }, [data, filters, sortConfig, pinnacleOdds])
+  }, [data, filters, sortData])
 
   const getPinnacleOdds = (row: BetData) => {
     const key = `${row.game_id}:${row.market}:${row.selection}`

@@ -16,10 +16,15 @@ import { useState, useEffect, useMemo } from "react"
 import { Command, CommandInput, CommandEmpty, CommandGroup, CommandItem, CommandSeparator } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Button } from "@/components/ui/button"
-import { Check, ChevronsUpDown } from "lucide-react"
+import { Check, ChevronsUpDown, ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { databaseService, BetData } from "@/services/database"
 import { oddsStreamService } from "@/services/oddsStream"
+
+type SortConfig = {
+  column: string | null
+  direction: "asc" | "desc"
+}
 
 export default function Home() {
   const [data, setData] = useState<BetData[]>([])
@@ -31,6 +36,7 @@ export default function Home() {
   const [openPopover, setOpenPopover] = useState<string | null>(null)
   const [pinnacleOdds, setPinnacleOdds] = useState<Record<string, number>>({})
   const [streamStatus, setStreamStatus] = useState<"connecting" | "connected" | "error">("connecting")
+  const [sortConfig, setSortConfig] = useState<SortConfig>({ column: null, direction: "asc" })
 
   const uniqueValues = useMemo(() => {
     const values: Record<string, Set<string>> = {}
@@ -128,12 +134,54 @@ export default function Home() {
     }
   }, [data, columns, uniqueValues])
 
-  const filteredData = data.filter(row => {
-    return Object.entries(filters).every(([key, selectedValues]) => {
-      if (!selectedValues || selectedValues.length === 0) return true
-      return selectedValues.includes(String(row[key]))
+  const sortData = (data: BetData[]) => {
+    if (!sortConfig.column) return data
+
+    return [...data].sort((a, b) => {
+      const aValue = sortConfig.column === "Pinnacle" 
+        ? pinnacleOdds[`${a.game_id}:${a.market}:${a.selection}`] || 0
+        : a[sortConfig.column]
+      const bValue = sortConfig.column === "Pinnacle"
+        ? pinnacleOdds[`${b.game_id}:${b.market}:${b.selection}`] || 0
+        : b[sortConfig.column]
+
+      if (typeof aValue === "number" && typeof bValue === "number") {
+        return sortConfig.direction === "asc" ? aValue - bValue : bValue - aValue
+      }
+
+      const aStr = String(aValue).toLowerCase()
+      const bStr = String(bValue).toLowerCase()
+      return sortConfig.direction === "asc" 
+        ? aStr.localeCompare(bStr)
+        : bStr.localeCompare(aStr)
     })
-  })
+  }
+
+  const handleSort = (column: string) => {
+    setSortConfig(prev => ({
+      column,
+      direction: prev.column === column && prev.direction === "asc" ? "desc" : "asc"
+    }))
+  }
+
+  const getSortIcon = (column: string) => {
+    if (sortConfig.column !== column) {
+      return <ArrowUpDown className="ml-2 h-4 w-4" />
+    }
+    return sortConfig.direction === "asc" 
+      ? <ArrowUp className="ml-2 h-4 w-4" />
+      : <ArrowDown className="ml-2 h-4 w-4" />
+  }
+
+  const filteredData = useMemo(() => {
+    const filtered = data.filter(row => {
+      return Object.entries(filters).every(([key, selectedValues]) => {
+        if (!selectedValues || selectedValues.length === 0) return true
+        return selectedValues.includes(String(row[key]))
+      })
+    })
+    return sortData(filtered)
+  }, [data, filters, sortConfig, pinnacleOdds])
 
   const getPinnacleOdds = (row: BetData) => {
     const key = `${row.game_id}:${row.market}:${row.selection}`
@@ -189,7 +237,7 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold">Live Bets Data</h1>
               <p className="text-muted-foreground">
-                View and filter live betting data
+                View and filter live betting data. Click column headers to sort.
               </p>
             </div>
 
@@ -222,8 +270,13 @@ export default function Home() {
                             <TableHead 
                               key={column} 
                               style={{ width: `${columnWidths[column]}px`, minWidth: `${columnWidths[column]}px` }}
+                              className="cursor-pointer hover:bg-muted/50"
+                              onClick={() => handleSort(column)}
                             >
-                              {column}
+                              <div className="flex items-center">
+                                {column}
+                                {getSortIcon(column)}
+                              </div>
                             </TableHead>
                           ))}
                         </TableRow>

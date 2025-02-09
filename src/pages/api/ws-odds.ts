@@ -2,6 +2,7 @@
 import { Server as SocketIOServer } from "socket.io"
 import { NextApiRequest } from "next"
 import { Server as HTTPServer } from "http"
+import { Socket } from "socket.io"
 
 const API_KEY = process.env.NEXT_PUBLIC_OPTICODDS_API_KEY
 
@@ -14,6 +15,14 @@ interface StreamConfig {
   market: string
   gameId: string
   selection: string
+}
+
+interface OddsData {
+  game_id: string
+  market: string
+  selection: string
+  sportsbook: string
+  price: number
 }
 
 let io: SocketIOServer | null = null
@@ -30,7 +39,7 @@ function initSocketServer(server: HTTPServer) {
     }
   })
   
-  io.on("connection", (socket) => {
+  io.on("connection", (socket: Socket) => {
     console.log("[Socket.IO Server] New connection established")
     
     socket.on("subscribe", async (config: StreamConfig) => {
@@ -44,18 +53,18 @@ function initSocketServer(server: HTTPServer) {
           market: config.market
         })
         
+        const headers: HeadersInit = {
+          "X-Api-Key": API_KEY,
+          "Accept": "text/event-stream"
+        }
+        
         console.log("[Socket.IO Server] Request URL:", `${url}?${params.toString()}`)
         console.log("[Socket.IO Server] Request headers:", {
           "X-Api-Key": API_KEY?.slice(0, 5) + "...",
           "Accept": "text/event-stream"
         })
 
-        const response = await fetch(`${url}?${params.toString()}`, {
-          headers: {
-            "X-Api-Key": API_KEY,
-            "Accept": "text/event-stream"
-          }
-        })
+        const response = await fetch(`${url}?${params.toString()}`, { headers })
 
         console.log("[Socket.IO Server] Response status:", response.status)
         if (!response.ok) {
@@ -88,7 +97,7 @@ function initSocketServer(server: HTTPServer) {
               try {
                 const data = JSON.parse(line.slice(5))
                 if (data.data) {
-                  const matchingOdd = data.data.find((odd: any) => 
+                  const matchingOdd = data.data.find((odd: OddsData) => 
                     odd.game_id === config.gameId &&
                     odd.market === config.market &&
                     odd.selection === config.selection &&

@@ -1,0 +1,438 @@
+﻿Grade,Selection_Date,Match_Date,Sport,League,Home_Team,Away_Team,Market,Selection,Pinnacle,Pinn_Limit,game_id
+A,2002-10-25,2/15/25,Paraguay,Primera Division,Nacional Asuncion,Guarani,1x2,Guarani,180,,
+A,2002-10-25,2/15/25,Paraguay,Primera Division,Nacional Asuncion,Guarani,DNB,Guarani,-106,,
+A,2002-10-25,2/15/25,Paraguay,Primera Division,Nacional Asuncion,Guarani,1H 1x2,Guarani,255,,
+A,2002-10-25,2/15/25,Paraguay,Primera Division,Nacional Asuncion,Guarani,1H DNB,Guarani,-109,,
+A,2002-11-25,2/15/25,Paraguay,Primera Division,Libertad Asuncion,Ameliano,1x2,Libertad Asuncion,-117,,
+A,2002-11-25,2/15/25,Paraguay,Primera Division,Libertad Asuncion,Ameliano,DNB,Libertad Asuncion,-301,,
+A,2002-11-25,2/15/25,Paraguay,Primera Division,Libertad Asuncion,Ameliano,1H 1x2,Libertad Asuncion,158,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Moneyline,U Catolica de Ecuador,184,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Asian,U Catolica de Ecuador -0.25,144,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Draw No Bet,U Catolica de Ecuador,102,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Asian,U Catolica de Ecuador +0.25,-145,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Double Chance,U Catolica de Ecuador,-196,,
+Delta-35,2002-11-25,2/16/25,Soccer,Ecuador - Liga Pro,Emelec,U Catolica de Ecuador,Asian,U Catolica de Ecuador +0.75,-278,,
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Goal Spread,Club Atlético Nacional SA -1.5,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -1.5,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -1.25,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Goal Spread,Club Atlético Nacional SA -1,379,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -1,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -0.75,226,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Moneyline,Club Atlético Nacional SA,162,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Goal Spread,Club Atlético Nacional SA -0.5,161,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -0.5,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA -0.25,120,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Goal Spread,Club Atlético Nacional SA +0,-128,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA +0,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Draw No Bet,Club Atlético Nacional SA,-132,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA +0.25,-191,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Goal Spread,Club Atlético Nacional SA +0.5,-257,$400 ,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA +0.5,,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Double Chance,Club Atlético Nacional SA or Draw,-262,,202502134C8B7AEB
+Delta-35,2002-11-25,2002-12-25,Soccer,Colombia - Primera A,Independiente Santa Fe SA,Club Atlético Nacional SA,Asian Handicap,Club Atlético Nacional SA +0.75,-390,$400 ,202502134C8B7AEB
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Moneyline,CD Guadalajara,-2192,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -0.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -0.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -0.75,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -1,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -1,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -1.25,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -1.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -1.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -1.75,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -2,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -2,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -2.25,-227,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -2.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -2.5,-168,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -2.75,-134,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -3,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -3,-101,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -3.25,123,$100 ,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Asian Handicap,CD Guadalajara -3.5,,,20250213CF457929
+Delta-3,2002-11-25,2002-12-25,Soccer,CONCACAF - Champions Cup,CD Guadalajara,Cibao FC,Goal Spread,CD Guadalajara -3.5,146,$100 ,20250213CF457929
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Double Chance,Envigado FC Or Draw,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Goal Spread,Envigado FC +0.5,133,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Asian Handicap,Envigado FC +0.5,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Draw No Bet,Envigado FC,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Goal Spread,Envigado FC +0,362,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Asian Handicap,Envigado FC +0,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Goal Spread,Envigado FC +1,-142,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Asian Handicap,Envigado FC +1.25,-196,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Goal Spread,Envigado FC +1.5,-254,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Asian Handicap,Envigado FC +1.5,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,1st Half Goal Spread,Envigado FC +0.5,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,1st Half Asian Handicap,Envigado FC +0.5,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,1st Half Goal Spread,Envigado FC +0,,,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,1st Half Asian Handicap,Envigado FC +0.25,108,$100 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,CD La Equidad Seguros SA,Envigado FC,Asian Handicap,Envigado FC +0.25,196,$300 ,20250213DD6919A9
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Moneyline,Club Deportes Tolima SA,144,$300 ,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Goal Spread,Club Deportes Tolima SA -0.5,144,$300 ,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Asian Handicap,Club Deportes Tolima SA -0.5,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Draw No Bet,Club Deportes Tolima SA,-156,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Goal Spread,Club Deportes Tolima SA +0,-153,$300 ,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Asian Handicap,Club Deportes Tolima SA +0,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Double Chance,Club Deportes Tolima SA or Draw,-305,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Goal Spread,Club Deportes Tolima SA +0.5,-303,$300 ,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,Asian Handicap,Club Deportes Tolima SA +0.5,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,1st Half Moneyline,Club Deportes Tolima SA,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,1st Half Goal Spread,Club Deportes Tolima SA -0.5,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,1st Half Asian Handicap,Club Deportes Tolima SA -0.5,,,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,1st Half Goal Spread,Club Deportes Tolima SA +0,-155,$100 ,202502147D8733E4
+A,2002-11-25,2/13/25,Soccer,Colombia - Primera A,Deportivo Pereira FC,Club Deportes Tolima SA,1st Half Asian Handicap,Club Deportes Tolima SA +0,,,202502147D8733E4
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Moneyline,LKS Bruk-Bet Termalica Nieciecza,-155,$300 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Goal Spread,LKS Bruk-Bet Termalica Nieciecza -0.5,-155,$300 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Asian Handicap,LKS Bruk-Bet Termalica Nieciecza -0.5,,,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Draw No Bet,LKS Bruk-Bet Termalica Nieciecza,-422,,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Goal Spread,LKS Bruk-Bet Termalica Nieciecza +0,-418,$300 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Asian Handicap,LKS Bruk-Bet Termalica Nieciecza +0,,,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Goal Spread,LKS Bruk-Bet Termalica Nieciecza -1,123,$300 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Asian Handicap,LKS Bruk-Bet Termalica Nieciecza -1,,,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Goal Spread,LKS Bruk-Bet Termalica Nieciecza -1.5,199,$300 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,Asian Handicap,LKS Bruk-Bet Termalica Nieciecza -1.5,,,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,1st Half Moneyline,LKS Bruk-Bet Termalica Nieciecza,124,$100 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,1st Half Goal Spread,LKS Bruk-Bet Termalica Nieciecza -0.5,123,$100 ,20250214A18EB74E
+A,2002-11-25,2/14/25,Soccer,Poland - I Liga,OKS Odra Opole,LKS Bruk-Bet Termalica Nieciecza,1st Half Asian Handicap,LKS Bruk-Bet Termalica Nieciecza -0.5,,,20250214A18EB74E
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Moneyline,CSD Defensa y Justicia,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Goal Spread,CSD Defensa y Justicia -0.5,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Asian Handicap,CSD Defensa y Justicia -0.5,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Draw No Bet,CSD Defensa y Justicia,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Goal Spread,CSD Defensa y Justicia +0,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,Asian Handicap,CSD Defensa y Justicia +0,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,1st Half Moneyline,CSD Defensa y Justicia,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,1st Half Goal Spread,CSD Defensa y Justicia -0.5,,,2.02502E+41
+Rago,2002-11-25,2/15/25,Soccer,Argentina - Primera Division,CSD Defensa y Justicia,CA Barracas Central,1st Half Asian Handicap,CSD Defensa y Justicia -0.5,,,2.02502E+41
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Team Total,ZKS Stal Stalowa Wola Over 1.5,172,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Team Total,MKP Kotwica Kołobrzeg Under 1.5,-198,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Team Total,ZKS Stal Stalowa Wola Over 0.5,125,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Team Total,MKP Kotwica Kołobrzeg Under 0.5,-139,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Double Chance,ZKS Stal Stalowa Wola or Draw,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Goal Spread,ZKS Stal Stalowa Wola +0.5,-186,$200 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Asian Handicap,ZKS Stal Stalowa Wola +0.5,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Draw No Bet,ZKS Stal Stalowa Wola,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Goal Spread,ZKS Stal Stalowa Wola +0,-101,$200 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Asian Handicap,ZKS Stal Stalowa Wola +0,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Moneyline,ZKS Stal Stalowa Wola,167,$200 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Goal Spread,ZKS Stal Stalowa Wola -0.5,167,$200 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,Asian Handicap,ZKS Stal Stalowa Wola -0.5,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Moneyline,ZKS Stal Stalowa Wola,249,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Goal Spread,ZKS Stal Stalowa Wola -0.5,246,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Asian Handicap,ZKS Stal Stalowa Wola -0.5,,,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Goal Spread,ZKS Stal Stalowa Wola +0,105,$100 ,2025021552D001BC
+A,2002-10-25,2/15/25,Soccer,Poland - I Liga,MKP Kotwica Kołobrzeg,ZKS Stal Stalowa Wola,1st Half Asian Handicap,ZKS Stal Stalowa Wola +0,,,2025021552D001BC
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Goal Spread,Coleraine FC -1.5,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -1.5,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -1.25,309,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Goal Spread,Coleraine FC -1,264,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -1,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -0.75,173,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Moneyline,Coleraine FC,128,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Goal Spread,Coleraine FC -0.5,128,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -0.5,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC -0.25,103,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Draw No Bet,Coleraine FC,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Goal Spread,Coleraine FC +0,-132,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC +0,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC +0.25,-172,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Double Chance,Coleraine FC or Draw,,,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Goal Spread,Coleraine FC +0.5,-216,$300 ,2025021575CAA46F
+Delta-1,2002-10-25,2/14/25,Soccer,Northern Ireland - Premiership,Coleraine FC,Glentoran FC,Asian Handicap,Coleraine FC +0.5,,,2025021575CAA46F
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Moneyline,Anderlecht Reserve U21,184,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Goal Spread,Anderlecht Reserve U21 -0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Asian Handicap,Anderlecht Reserve U21 -0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Draw No Bet,Anderlecht Reserve U21,116,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Goal Spread,Anderlecht Reserve U21 +0,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Asian Handicap,Anderlecht Reserve U21 +0,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Double Chance,Anderlecht Reserve U21 or Draw,-156,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Goal Spread,Anderlecht Reserve U21 +0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Asian Handicap,Anderlecht Reserve U21 +0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,Asian Handicap,Anderlecht Reserve U21 +0.25,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,1st Half Moneyline,Anderlecht Reserve U21,239,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,1st Half Goal Spread,Anderlecht Reserve U21 -0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,1st Half Asian Handicap,Anderlecht Reserve U21 -0.5,,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,1st Half Goal Spread,Anderlecht Reserve U21 +0,108,,20250215B8690889
+A,2002-10-25,2/15/25,Soccer,Belgium - Challenger Pro League,Anderlecht Reserve U21,Lommel SK,1st Half Asian Handicap,Anderlecht Reserve U21 +0,,,20250215B8690889
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Moneyline,CA Chaco For Ever,258,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Goal Spread,CA Chaco For Ever -0.5,257,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever -0.5,,,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever -0.25,188,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Goal Spread,CA Chaco For Ever +0,115,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever +0,,,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Draw No Bet,CA Chaco For Ever,,,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever +0.25,-163,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Goal Spread,CA Chaco For Ever +0.5,-244,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever +0.5,,,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Double Chance,CA Chaco For Ever or Draw,,,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever +0.75,-383,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Goal Spread,CA Chaco For Ever +1,-815,$200 ,20250215DC31FD12
+Delta-35,2002-11-25,2/15/25,Soccer,Argentina - Primera Nacional,CA Defensores Unidos,CA Chaco For Ever,Asian Handicap,CA Chaco For Ever +1,,,20250215DC31FD12
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Moneyline,CA Rosario Central,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Goal Spread,CA Rosario Central -0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Asian Handicap,CA Rosario Central -0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Draw No Bet,CA Rosario Central,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Goal Spread,CA Rosario Central +0,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Asian Handicap,CA Rosario Central +0,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Double Chance,CA Rosario Central or Draw,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Goal Spread,CA Rosario Central +0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Asian Handicap,CA Rosario Central +0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Moneyline,CA Rosario Central,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Goal Spread,CA Rosario Central -0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Asian Handicap,CA Rosario Central -0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Goal Spread,CA Rosario Central +0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Asian Handicap,CA Rosario Central +0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Total Goals,Under 2.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Asian Total Goals,Under 2.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Total Goals,Under 1.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Asian Total Goals,Under 1.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Total Goals,Under 0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Asian Total Goals,Under 0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,Team Total,Newell's Old Boys Under 0.5,,,202502165E0BC191
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,Newell's Old Boys,CA Rosario Central,1st Half Team Total,Newell's Old Boys Under 0.5,,,202502165E0BC191
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,1st Half Team Total,Club Deportivo Garcilaso Over 0.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Team Total,Club Deportivo Garcilaso Over 1.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Moneyline,Club Deportivo Garcilaso,-208,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Goal Spread,Club Deportivo Garcilaso -0.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -0.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -0.75,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Goal Spread,Club Deportivo Garcilaso -1,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -1,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -1.25,106,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -1.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Goal Spread,Club Deportivo Garcilaso -1.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -1.75,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -2,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Goal Spread,Club Deportivo Garcilaso -2,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,Asian Handicap,Club Deportivo Garcilaso -2.25,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,1st Half Moneyline,Club Deportivo Garcilaso,-111,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,1st Half Asian Handicap,Club Deportivo Garcilaso -0.5,,,202502167CFED3A7
+Delta-35,2002-11-25,2/16/25,Soccer,Peru - Primera Division,Club Deportivo Garcilaso,Comerciantes Unidos,2nd Half Moneyline,Club Deportivo Garcilaso,,,202502167CFED3A7
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Moneyline,Palestino,-144,$300 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Goal Spread,Palestino -0.5,-144,$300 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Asian Handicap,Palestino -0.5,,,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Asian Handicap,Palestino -0.75,-111,$300 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Goal Spread,Palestino -1,124,$300 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Asian Handicap,Palestino -1,,,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Goal Spread,Palestino -1.5,192,$300 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,Asian Handicap,Palestino -1.5,,,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,1st Half Moneyline,Palestino,122,$100 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,1st Half Goal Spread,Palestino -0.5,121,$100 ,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,1st Half Asian Handicap,Palestino -0.5,,,20250216F702A34B
+A,2002-11-25,2/15/25,Soccer,Chile - Primera Division,Palestino,Cobresal,1st Half Asian Handicap,Palestino -0.75,182,$100 ,20250216F702A34B
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Moneyline,Maccabi Haifa FC,-231,$200 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Goal Spread,Maccabi Haifa FC -0.5,-235,$200 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Asian Handicap,Maccabi Haifa FC -0.5,,,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,,,,,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,,,,,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,,,,,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Goal Spread,Maccabi Haifa FC -1,-137,$200 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Asian Handicap,Maccabi Haifa FC -1,,,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Goal Spread,Maccabi Haifa FC -1.5,132,$200 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,Asian Handicap,Maccabi Haifa FC -1.25,104,$200 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,1st Half Moneyline,Maccabi Haifa FC,-110,$100 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,1st Half Goal Spread,Maccabi Haifa FC -0.5,-110,$100 ,202502173B0A22E5
+A,2002-11-25,2/17/25,Soccer,Israel - Premier League,Maccabi Haifa FC,Hapoel Jerusalem FC,1st Half Asian Handicap,Maccabi Haifa FC -0.5,,,202502173B0A22E5
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,Moneyline,CA Talleres de Córdoba,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,Goal Spread,CA Talleres de Córdoba -0.5,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,Asian Handicap,CA Talleres de Córdoba -0.5,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,Goal Spread,CA Talleres de Córdoba -1.5,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,Asian Handicap,CA Talleres de Córdoba -1.5,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,1st Half Moneyline,CA Talleres de Córdoba,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,1st Half Goal Spread,CA Talleres de Córdoba -0.5,,,202502179263E419
+A,2002-11-25,2/16/25,Soccer,Argentina - Primera Division,CA Talleres de Córdoba,CA Tucumán,1st Half Asian Handicap,CA Talleres de Córdoba -0.5,,,202502179263E419
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,Total Goals,Under 2.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,Asian Total Goals,Under 2.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,Total Goals,Under 1.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,Asian Total Goals,Under 1.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,1st Half Total Goals,Under 0.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Instituto AC Córdoba,CA San Lorenzo de Almagro,1st Half Asian Total Goals,Under 0.5,,,202502181E38D50D
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,Moneyline,Club Atlético Vélez Sarsfield,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,Goal Spread,Club Atlético Vélez Sarsfield -0.5,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,Asian Handicap,Club Atlético Vélez Sarsfield -0.5,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,Goal Spread,Club Atlético Vélez Sarsfield -1.5,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,Asian Handicap,Club Atlético Vélez Sarsfield -1.5,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,1st Half Moneyline,Club Atlético Vélez Sarsfield,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,1st Half Goal Spread,Club Atlético Vélez Sarsfield -0.5,,,20250218347652B8
+A,2002-11-25,2/17/25,Soccer,Argentina - Primera Division,Club Atlético Vélez Sarsfield,Godoy Cruz Antonio Tomba,1st Half Asian Handicap,Club Atlético Vélez Sarsfield -0.5,,,20250218347652B8
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Moneyline,Brisbane Roar FC,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Goal Spread,Brisbane Roar FC -0.5,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Asian Handicap,Brisbane Roar FC -0.5,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Draw No Bet,Brisbane Roar FC,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Goal Spread,Brisbane Roar FC +0,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Asian Handicap,Brisbane Roar FC +0,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Double Chance,Brisbane Roar FC or Draw,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Goal Spread,Brisbane Roar FC +0.5,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,Asian Handicap,Brisbane Roar FC +0.5,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,1st Half Moneyline,Brisbane Roar FC,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,1st Half Goal Spread,Brisbane Roar FC -0.5,,,australia_-_a-league:7BBAF522DE94
+A,2002-10-25,2/21/25,Soccer,Australia - A-League,Newcastle Jets FC,Brisbane Roar FC,1st Half Asian Handicap,Brisbane Roar FC -0.5,,,australia_-_a-league:7BBAF522DE94
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,Moneyline,Sydney FC,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,Goal Spread,Sydney FC -0.5,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,Asian Handicap,Sydney FC -0.5,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,1st Half Moneyline,Sydney FC,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,1st Half Goal Spread,Sydney FC -0.5,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,1st Half Asian Handicap,Sydney FC -0.5,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,Goal Spread,Sydney FC -1.5,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Perth Glory FC,Sydney FC,Draw No Bet,Sydney FC,,,australia_-_a-league:9FE6ABD2734E
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Moneyline,Western Sydney Wanderers FC,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Goal Spread,Western Sydney Wanderers FC -0.5,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Asian Handicap,Western Sydney Wanderers FC -0.5,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Draw No Bet,Western Sydney Wanderers FC,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Goal Spread,Western Sydney Wanderers FC +0,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,Asian Handicap,Western Sydney Wanderers FC +0,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,1st Half Moneyline,Western Sydney Wanderers FC,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,1st Half Goal Spread,Western Sydney Wanderers FC -0.5,,,australia_-_a-league:F4F6CDD3486F
+A*,2002-10-25,2/22/25,Soccer,Australia - A-League,Central Coast Mariners FC,Western Sydney Wanderers FC,1st Half Asian Handicap,Western Sydney Wanderers FC -0.5,,,australia_-_a-league:F4F6CDD3486F
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Team Total,TSV Hartberg Under 1.5,106,$100 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Team Total,TSV Hartberg Under 0.5,113,$100 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Double Chance,SK Austria Klagenfurt Or Draw,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Goal Spread,SK Austria Klagenfurt +0.5,113,$450 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Asian Handicap,SK Austria Klagenfurt +0.5,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Asian Handicap,SK Austria Klagenfurt +0.75,-113,$450 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Goal Spread,SK Austria Klagenfurt +1,-162,$450 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Asian Handicap,SK Austria Klagenfurt +1,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Draw No Bet,SK Austria Klagenfurt,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Goal Spread,SK Austria Klagenfurt +0,247,$450 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,Asian Handicap,SK Austria Klagenfurt +0,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Goal Spread,SK Austria Klagenfurt +0,208,$150 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Asian Handicap,SK Austria Klagenfurt +0,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Goal Spread,SK Austria Klagenfurt +0.5,-158,$150 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Asian Handicap,SK Austria Klagenfurt +0.5,,,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Austria - Bundesliga,TSV Hartberg,SK Austria Klagenfurt,1st Half Asian Handicap,SK Austria Klagenfurt +0.25,-101,$150 ,austria_-_bundesliga:504A9CCCC394
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Total Goals,Under 2.5,-153,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Asian Total Goals,Under 2.5,,,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Total Goals,Under 2.25,,,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Asian Total Goals,Under 2.25,-115,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Total Goals,Under 2,124,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Asian Total Goals,Under 2,,,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Total Goals,Under 1.5,197,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,Asian Total Goals,Under 1.5,,,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,1st Half Total Goals,Under 0.5,168,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,1st Half Asian Total Goals,Under 0.5,,,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,1st Half Total Goals,Under 1.5,-314,$100 ,croatia_-_1_hnl:A440120D0A89
+A,2002-10-25,2/16/25,Soccer,Croatia - 1. HNL,NK Osijek,HNK Rijeka,1st Half Total Goals,Under 1,-140,$100 ,croatia_-_1_hnl:A440120D0A89
+Delta-47,2002-09-25,2/14/25,Soccer,England - Championship,Queens Park Rangers FC,Derby County FC,Total Goals,Under 2.5,-153,$225 ,england_-_championship:044E519D3A7E
+Delta-47,2002-09-25,2/14/25,Soccer,England - Championship,Queens Park Rangers FC,Derby County FC,Asian Total Goals,Under 2.5,,,england_-_championship:044E519D3A7E
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Total Goals,Over 2.5,-106,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Asian Total Goals,Over 2.5,,,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Total Goals,Over 1.5,-338,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Asian Total Goals,Over 1.5,,,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Total Goals,Over 3.5,224,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,Asian Total Goals,Over 3.5,,,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,1st Half Total Goals,Over 0.5,-271,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,1st Half Asian Total Goals,Over 0.5,,,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,1st Half Total Goals,Over 1.5,188,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,1st Half Asian Total Goals,Over 1.5,,,india_-_super_league:B7B7EFC01E1D
+A,2002-10-25,2/16/25,Soccer,India - Super League,Mohammedan SC,East Bengal FC,1st Half Total Goals,Over 1,-117,$100 ,india_-_super_league:B7B7EFC01E1D
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,2nd Half Draw No Bet,Shamrock Rovers FC,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,2nd Half Moneyline,Shamrock Rovers FC,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Moneyline,Shamrock Rovers FC,117,$300 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Goal Spread,Shamrock Rovers FC -0.5,115,$300 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Asian Handicap,Shamrock Rovers FC -0.5,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Asian Handicap,Shamrock Rovers FC -0.75,155,$300 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Draw No Bet,Shamrock Rovers FC,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Goal Spread,Shamrock Rovers FC +0,-175,$300 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Asian Handicap,Shamrock Rovers FC +0,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Goal Spread,Shamrock Rovers FC -1.5,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,Asian Handicap,Shamrock Rovers FC -1.5,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,1st Half Moneyline,Shamrock Rovers FC,182,$100 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,1st Half Goal Spread,Shamrock Rovers FC -0.5,178,$100 ,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,1st Half Asian Handicap,Shamrock Rovers FC -0.5,,,ireland_-_premier_league:4DD606997DF3
+A,2002-11-25,2/16/25,Soccer,Ireland - Premier League,Bohemian FC,Shamrock Rovers FC,1st Half Goal Spread,Shamrock Rovers FC +0,-166,$100 ,ireland_-_premier_league:4DD606997DF3
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Goal Spread,CSyD Dorados de Sinaloa -1.5,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -1.5,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -1.25,263,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Goal Spread,CSyD Dorados de Sinaloa -1,220,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -1,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -0.75,148,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Moneyline,CSyD Dorados de Sinaloa,111,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Goal Spread,CSyD Dorados de Sinaloa -0.5,111,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -0.5,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa -0.25,-121,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Goal Spread,CSyD Dorados de Sinaloa +0,-187,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa +0,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Draw No Bet,CSyD Dorados de Sinaloa,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa +0.25,-251,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Goal Spread,CSyD Dorados de Sinaloa +0.5,-321,$200 ,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Asian Handicap,CSyD Dorados de Sinaloa +0.5,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,Double Chance,CSyD Dorados de Sinaloa or Draw,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,,2/15/25,Soccer,Mexico - Liga de Expansion MX,CSyD Dorados de Sinaloa,Club Atlético Morelia,,none available,,,mexico_-_liga_de_expansion_mx:EDC6C08D9245
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Goal Spread,Falkirk FC -1,151,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC -1,,,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC -0.75,106,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Moneyline,Falkirk FC,-124,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Goal Spread,Falkirk FC -0.5,-123,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC -0.5,,,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC -0.25,-173,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Goal Spread,Falkirk FC +0,-283,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC +0,,,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Draw No Bet,Falkirk FC,,,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,Asian Handicap,Falkirk FC +0.25,-364,$200 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,1st Half Moneyline,Falkirk FC,135,$100 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,1st Half Asian Handicap,Falkirk FC -0.5,,,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Falkirk FC,Ayr United FC,1st Half Goal Spread,Falkirk FC -0.5,134,$100 ,scotland_-_championship:37911AB0582C
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Goal Spread,Raith Rovers FC -1,241,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC -1,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC -0.75,159,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Moneyline,Raith Rovers FC,118,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Goal Spread,Raith Rovers FC -0.5,118,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC -0.5,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC -0.25,-112,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Goal Spread,Raith Rovers FC +0,-171,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC +0,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Draw No Bet,Raith Rovers FC,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC +0.25,-232,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Goal Spread,Raith Rovers FC +0.5,-298,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC +0.5,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Double Chance,Raith Rovers FC or Draw,,,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Raith Rovers FC,Partick Thistle FC,Asian Handicap,Raith Rovers FC +0.75,-442,$200 ,scotland_-_championship:848831FAAE8B
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Moneyline,Airdrieonians FC,251,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Goal Spread,Airdrieonians FC -0.5,248,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC -0.5,,,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC -0.25,205,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Goal Spread,Airdrieonians FC +0,162,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC +0,,,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Draw No Bet,Airdrieonians FC,,,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC +0.25,108,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Goal Spread,Airdrieonians FC +0.5,-124,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC +0.5,,,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Double Chance,Airdrieonians FC Or Draw,,,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC +0.75,-168,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Goal Spread,Airdrieonians FC +1,-258,$200 ,scotland_-_championship:BAECB2297EE4
+Delta-35,2002-11-25,2/15/25,Soccer,Scotland - Championship,Greenock Morton FC,Airdrieonians FC,Asian Handicap,Airdrieonians FC +1,,,scotland_-_championship:BAECB2297EE4
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
